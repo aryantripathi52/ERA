@@ -1,0 +1,10 @@
+google-genai
+google-generativeai
+groq
+edge-tts
+fastapi
+uvicorn
+websockets
+supabase
+python-dotenv
+requests

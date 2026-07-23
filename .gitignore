@@ -1,0 +1,6 @@
+
+lester.exe
+*.exe
+__pycache__/
+*.pyc
+.env

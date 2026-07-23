@@ -1,0 +1,3007 @@
+Name: <module>
+Constants: ('\nmemory_manager.py — MARK XXV Hafıza Sistemi\n============================================\nDüzeltmeler:\n  - _MEMORY_EVERY_N_TURNS: 3 → 1 (her turda kontrol)\n  - Stage 1 YES/NO check daha geniş kriterlere sahip\n  - Extraction prompt daha kapsamlı ve agresif\n  - Projeleri, favori şeyleri, arkadaşları daha iyi yakalar\n', 0, None, ('datetime',), ('Lock',), ('Path',), 'return', <code object get_base_dir at 0x00000236B9D2DA30, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 18>, 'memory', 'long_term.json', 400, <code object _empty_memory at 0x00000236BC496CD0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 30>, <code object load_memory at 0x00000236BAEB5990, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 41>, <code object save_memory at 0x00000236B9D0EBB0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 60>, 'val', <code object _truncate_value at 0x00000236B9D32EF0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 71>, 'target', 'updates', <code object _recursive_update at 0x00000236BAF417B0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 77>, 'memory_update', <code object update_memory at 0x00000236B9DA23A0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 106>, 'user_text', 'jarvis_text', 'api_key', <code object should_extract_memory at 0x00000236B9D7A970, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 117>, <code object extract_memory at 0x00000236BAF4D760, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 146>, <code object format_memory_for_prompt at 0x00000236BAF391B0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 202>, 'key', 'value', 'category', <code object remember at 0x00000236BC486E50, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 279>, <code object forget at 0x00000236B9D279F0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 287>, ('notes',))
+Names: ('__doc__', 'json', 'datetime', 'threading', 'Lock', 'pathlib', 'Path', 'sys', 'get_base_dir', 'BASE_DIR', 'MEMORY_PATH', '_lock', 'MAX_VALUE_LENGTH', 'dict', '_empty_memory', 'load_memory', 'save_memory', 'str', '_truncate_value', 'bool', '_recursive_update', 'update_memory', 'should_extract_memory', 'extract_memory', 'format_memory_for_prompt', 'remember', 'forget', 'forget_memory')
+Varnames: ()
+--- Disassembly ---
+  0           RESUME                   0
+
+  1           LOAD_CONST               0 ('\nmemory_manager.py — MARK XXV Hafıza Sistemi\n============================================\nDüzeltmeler:\n  - _MEMORY_EVERY_N_TURNS: 3 → 1 (her turda kontrol)\n  - Stage 1 YES/NO check daha geniş kriterlere sahip\n  - Extraction prompt daha kapsamlı ve agresif\n  - Projeleri, favori şeyleri, arkadaşları daha iyi yakalar\n')
+              STORE_NAME               0 (__doc__)
+
+ 11           LOAD_CONST               1 (0)
+              LOAD_CONST               2 (None)
+              IMPORT_NAME              1 (json)
+              STORE_NAME               1 (json)
+
+ 12           LOAD_CONST               1 (0)
+              LOAD_CONST               3 (('datetime',))
+              IMPORT_NAME              2 (datetime)
+              IMPORT_FROM              2 (datetime)
+              STORE_NAME               2 (datetime)
+              POP_TOP
+
+ 13           LOAD_CONST               1 (0)
+              LOAD_CONST               4 (('Lock',))
+              IMPORT_NAME              3 (threading)
+              IMPORT_FROM              4 (Lock)
+              STORE_NAME               4 (Lock)
+              POP_TOP
+
+ 14           LOAD_CONST               1 (0)
+              LOAD_CONST               5 (('Path',))
+              IMPORT_NAME              5 (pathlib)
+              IMPORT_FROM              6 (Path)
+              STORE_NAME               6 (Path)
+              POP_TOP
+
+ 15           LOAD_CONST               1 (0)
+              LOAD_CONST               2 (None)
+              IMPORT_NAME              7 (sys)
+              STORE_NAME               7 (sys)
+
+ 18           LOAD_CONST               6 ('return')
+              LOAD_NAME                6 (Path)
+              BUILD_TUPLE              2
+              LOAD_CONST               7 (<code object get_base_dir at 0x00000236B9D2DA30, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 18>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   4 (annotations)
+              STORE_NAME               8 (get_base_dir)
+
+ 24           LOAD_NAME                8 (get_base_dir)
+              PUSH_NULL
+              CALL                     0
+              STORE_NAME               9 (BASE_DIR)
+
+ 25           LOAD_NAME                9 (BASE_DIR)
+              LOAD_CONST               8 ('memory')
+              BINARY_OP               11 (/)
+              LOAD_CONST               9 ('long_term.json')
+              BINARY_OP               11 (/)
+              STORE_NAME              10 (MEMORY_PATH)
+
+ 26           LOAD_NAME                4 (Lock)
+              PUSH_NULL
+              CALL                     0
+              STORE_NAME              11 (_lock)
+
+ 27           LOAD_CONST              10 (400)
+              STORE_NAME              12 (MAX_VALUE_LENGTH)
+
+ 30           LOAD_CONST               6 ('return')
+              LOAD_NAME               13 (dict)
+              BUILD_TUPLE              2
+              LOAD_CONST              11 (<code object _empty_memory at 0x00000236BC496CD0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 30>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   4 (annotations)
+              STORE_NAME              14 (_empty_memory)
+
+ 41           LOAD_CONST               6 ('return')
+              LOAD_NAME               13 (dict)
+              BUILD_TUPLE              2
+              LOAD_CONST              12 (<code object load_memory at 0x00000236BAEB5990, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 41>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   4 (annotations)
+              STORE_NAME              15 (load_memory)
+
+ 60           LOAD_CONST               8 ('memory')
+              LOAD_NAME               13 (dict)
+              LOAD_CONST               6 ('return')
+              LOAD_CONST               2 (None)
+              BUILD_TUPLE              4
+              LOAD_CONST              13 (<code object save_memory at 0x00000236B9D0EBB0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 60>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   4 (annotations)
+              STORE_NAME              16 (save_memory)
+
+ 71           LOAD_CONST              14 ('val')
+              LOAD_NAME               17 (str)
+              LOAD_CONST               6 ('return')
+              LOAD_NAME               17 (str)
+              BUILD_TUPLE              4
+              LOAD_CONST              15 (<code object _truncate_value at 0x00000236B9D32EF0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 71>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   4 (annotations)
+              STORE_NAME              18 (_truncate_value)
+
+ 77           LOAD_CONST              16 ('target')
+              LOAD_NAME               13 (dict)
+              LOAD_CONST              17 ('updates')
+              LOAD_NAME               13 (dict)
+              LOAD_CONST               6 ('return')
+              LOAD_NAME               19 (bool)
+              BUILD_TUPLE              6
+              LOAD_CONST              18 (<code object _recursive_update at 0x00000236BAF417B0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 77>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   4 (annotations)
+              STORE_NAME              20 (_recursive_update)
+
+106           LOAD_CONST              19 ('memory_update')
+              LOAD_NAME               13 (dict)
+              LOAD_CONST               6 ('return')
+              LOAD_NAME               13 (dict)
+              BUILD_TUPLE              4
+              LOAD_CONST              20 (<code object update_memory at 0x00000236B9DA23A0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 106>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   4 (annotations)
+              STORE_NAME              21 (update_memory)
+
+117           LOAD_CONST              21 ('user_text')
+              LOAD_NAME               17 (str)
+              LOAD_CONST              22 ('jarvis_text')
+              LOAD_NAME               17 (str)
+              LOAD_CONST              23 ('api_key')
+              LOAD_NAME               17 (str)
+              LOAD_CONST               6 ('return')
+              LOAD_NAME               19 (bool)
+              BUILD_TUPLE              8
+              LOAD_CONST              24 (<code object should_extract_memory at 0x00000236B9D7A970, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 117>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   4 (annotations)
+              STORE_NAME              22 (should_extract_memory)
+
+146           LOAD_CONST              21 ('user_text')
+              LOAD_NAME               17 (str)
+              LOAD_CONST              22 ('jarvis_text')
+              LOAD_NAME               17 (str)
+              LOAD_CONST              23 ('api_key')
+              LOAD_NAME               17 (str)
+              LOAD_CONST               6 ('return')
+              LOAD_NAME               13 (dict)
+              BUILD_TUPLE              8
+              LOAD_CONST              25 (<code object extract_memory at 0x00000236BAF4D760, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 146>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   4 (annotations)
+              STORE_NAME              23 (extract_memory)
+
+202           LOAD_CONST               8 ('memory')
+              LOAD_NAME               13 (dict)
+              LOAD_CONST               2 (None)
+              BINARY_OP                7 (|)
+              LOAD_CONST               6 ('return')
+              LOAD_NAME               17 (str)
+              BUILD_TUPLE              4
+              LOAD_CONST              26 (<code object format_memory_for_prompt at 0x00000236BAF391B0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 202>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   4 (annotations)
+              STORE_NAME              24 (format_memory_for_prompt)
+
+279           LOAD_CONST              32 (('notes',))
+              LOAD_CONST              27 ('key')
+              LOAD_NAME               17 (str)
+              LOAD_CONST              28 ('value')
+              LOAD_NAME               17 (str)
+              LOAD_CONST              29 ('category')
+              LOAD_NAME               17 (str)
+              LOAD_CONST               6 ('return')
+              LOAD_NAME               17 (str)
+              BUILD_TUPLE              8
+              LOAD_CONST              30 (<code object remember at 0x00000236BC486E50, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 279>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   4 (annotations)
+              SET_FUNCTION_ATTRIBUTE   1 (defaults)
+              STORE_NAME              25 (remember)
+
+287           LOAD_CONST              32 (('notes',))
+              LOAD_CONST              27 ('key')
+              LOAD_NAME               17 (str)
+              LOAD_CONST              29 ('category')
+              LOAD_NAME               17 (str)
+              LOAD_CONST               6 ('return')
+              LOAD_NAME               17 (str)
+              BUILD_TUPLE              6
+              LOAD_CONST              31 (<code object forget at 0x00000236B9D279F0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 287>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   4 (annotations)
+              SET_FUNCTION_ATTRIBUTE   1 (defaults)
+              STORE_NAME              26 (forget)
+
+298           LOAD_NAME               26 (forget)
+              STORE_NAME              27 (forget_memory)
+              RETURN_CONST             2 (None)
+
+Disassembly of <code object get_base_dir at 0x00000236B9D2DA30, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 18>:
+ 18           RESUME                   0
+
+ 19           LOAD_GLOBAL              1 (getattr + NULL)
+              LOAD_GLOBAL              2 (sys)
+              LOAD_CONST               1 ('frozen')
+              LOAD_CONST               2 (False)
+              CALL                     3
+              TO_BOOL
+              POP_JUMP_IF_FALSE       35 (to L1)
+
+ 20           LOAD_GLOBAL              5 (Path + NULL)
+              LOAD_GLOBAL              2 (sys)
+              LOAD_ATTR                6 (executable)
+              CALL                     1
+              LOAD_ATTR                8 (parent)
+              RETURN_VALUE
+
+ 21   L1:     LOAD_GLOBAL              5 (Path + NULL)
+              LOAD_GLOBAL             10 (__file__)
+              CALL                     1
+              LOAD_ATTR               13 (resolve + NULL|self)
+              CALL                     0
+              LOAD_ATTR                8 (parent)
+              LOAD_ATTR                8 (parent)
+              RETURN_VALUE
+
+Disassembly of <code object _empty_memory at 0x00000236BC496CD0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 30>:
+ 30           RESUME                   0
+
+ 32           BUILD_MAP                0
+
+ 33           BUILD_MAP                0
+
+ 34           BUILD_MAP                0
+
+ 35           BUILD_MAP                0
+
+ 36           BUILD_MAP                0
+
+ 37           BUILD_MAP                0
+
+ 31           LOAD_CONST               1 (('identity', 'preferences', 'projects', 'relationships', 'wishes', 'notes'))
+              BUILD_CONST_KEY_MAP      6
+              RETURN_VALUE
+
+Disassembly of <code object load_memory at 0x00000236BAEB5990, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 41>:
+  41            RESUME                   0
+
+  42            LOAD_GLOBAL              0 (MEMORY_PATH)
+                LOAD_ATTR                3 (exists + NULL|self)
+                CALL                     0
+                TO_BOOL
+                POP_JUMP_IF_TRUE        10 (to L1)
+
+  43            LOAD_GLOBAL              5 (_empty_memory + NULL)
+                CALL                     0
+                RETURN_VALUE
+
+  45    L1:     LOAD_GLOBAL              6 (_lock)
+                BEFORE_WITH
+        L2:     POP_TOP
+
+  46    L3:     NOP
+
+  47    L4:     LOAD_GLOBAL              8 (json)
+                LOAD_ATTR               10 (loads)
+                PUSH_NULL
+                LOAD_GLOBAL              0 (MEMORY_PATH)
+                LOAD_ATTR               13 (read_text + NULL|self)
+                LOAD_CONST               1 ('utf-8')
+                LOAD_CONST               2 (('encoding',))
+                CALL_KW                  1
+                CALL                     1
+                STORE_FAST               0 (data)
+
+  48            LOAD_GLOBAL             15 (isinstance + NULL)
+                LOAD_FAST                0 (data)
+                LOAD_GLOBAL             16 (dict)
+                CALL                     2
+                TO_BOOL
+                POP_JUMP_IF_FALSE       41 (to L10)
+
+  49            LOAD_GLOBAL              5 (_empty_memory + NULL)
+                CALL                     0
+                STORE_FAST               1 (base)
+
+  50            LOAD_FAST                1 (base)
+                GET_ITER
+        L5:     FOR_ITER                14 (to L8)
+                STORE_FAST               2 (key)
+
+  51            LOAD_FAST_LOAD_FAST     32 (key, data)
+                CONTAINS_OP              1
+        L6:     POP_JUMP_IF_TRUE         2 (to L7)
+                JUMP_BACKWARD           10 (to L5)
+
+  52    L7:     BUILD_MAP                0
+                LOAD_FAST_LOAD_FAST      2 (data, key)
+                STORE_SUBSCR
+                JUMP_BACKWARD           16 (to L5)
+
+  50    L8:     END_FOR
+                POP_TOP
+
+  53            LOAD_FAST                0 (data)
+
+  45    L9:     SWAP                     2
+                LOAD_CONST               0 (None)
+                LOAD_CONST               0 (None)
+                LOAD_CONST               0 (None)
+                CALL                     2
+                POP_TOP
+                RETURN_VALUE
+
+  54   L10:     LOAD_GLOBAL              5 (_empty_memory + NULL)
+                CALL                     0
+
+  45   L11:     SWAP                     2
+                LOAD_CONST               0 (None)
+                LOAD_CONST               0 (None)
+                LOAD_CONST               0 (None)
+                CALL                     2
+                POP_TOP
+                RETURN_VALUE
+
+  --   L12:     PUSH_EXC_INFO
+
+  55            LOAD_GLOBAL             18 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE       43 (to L18)
+                STORE_FAST               3 (e)
+
+  56   L13:     LOAD_GLOBAL             21 (print + NULL)
+                LOAD_CONST               3 ('[Memory] ⚠️ Load error: ')
+                LOAD_FAST                3 (e)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+
+  57            LOAD_GLOBAL              5 (_empty_memory + NULL)
+                CALL                     0
+       L14:     SWAP                     2
+       L15:     POP_EXCEPT
+                LOAD_CONST               0 (None)
+                STORE_FAST               3 (e)
+                DELETE_FAST              3 (e)
+
+  45   L16:     SWAP                     2
+                LOAD_CONST               0 (None)
+                LOAD_CONST               0 (None)
+                LOAD_CONST               0 (None)
+                CALL                     2
+                POP_TOP
+                RETURN_VALUE
+
+  --   L17:     LOAD_CONST               0 (None)
+                STORE_FAST               3 (e)
+                DELETE_FAST              3 (e)
+                RERAISE                  1
+
+  55   L18:     RERAISE                  0
+
+  --   L19:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+
+  45   L20:     PUSH_EXC_INFO
+                WITH_EXCEPT_START
+                TO_BOOL
+                POP_JUMP_IF_TRUE         1 (to L21)
+                RERAISE                  2
+       L21:     POP_TOP
+       L22:     POP_EXCEPT
+                POP_TOP
+                POP_TOP
+                RETURN_CONST             0 (None)
+
+  --   L23:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+ExceptionTable:
+  L2 to L3 -> L20 [1] lasti
+  L4 to L6 -> L12 [1]
+  L7 to L9 -> L12 [1]
+  L10 to L11 -> L12 [1]
+  L12 to L13 -> L19 [2] lasti
+  L13 to L14 -> L17 [2] lasti
+  L14 to L15 -> L19 [2] lasti
+  L15 to L16 -> L20 [1] lasti
+  L17 to L19 -> L19 [2] lasti
+  L19 to L20 -> L20 [1] lasti
+  L20 to L22 -> L23 [3] lasti
+
+Disassembly of <code object save_memory at 0x00000236B9D0EBB0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 60>:
+  60           RESUME                   0
+
+  61           LOAD_GLOBAL              1 (isinstance + NULL)
+               LOAD_FAST                0 (memory)
+               LOAD_GLOBAL              2 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_TRUE         1 (to L1)
+
+  62           RETURN_CONST             0 (None)
+
+  63   L1:     LOAD_GLOBAL              4 (MEMORY_PATH)
+               LOAD_ATTR                6 (parent)
+               LOAD_ATTR                9 (mkdir + NULL|self)
+               LOAD_CONST               1 (True)
+               LOAD_CONST               1 (True)
+               LOAD_CONST               2 (('parents', 'exist_ok'))
+               CALL_KW                  2
+               POP_TOP
+
+  64           LOAD_GLOBAL             10 (_lock)
+               BEFORE_WITH
+       L2:     POP_TOP
+
+  65           LOAD_GLOBAL              4 (MEMORY_PATH)
+               LOAD_ATTR               13 (write_text + NULL|self)
+
+  66           LOAD_GLOBAL             14 (json)
+               LOAD_ATTR               16 (dumps)
+               PUSH_NULL
+               LOAD_FAST                0 (memory)
+               LOAD_CONST               3 (2)
+               LOAD_CONST               4 (False)
+               LOAD_CONST               5 (('indent', 'ensure_ascii'))
+               CALL_KW                  3
+
+  67           LOAD_CONST               6 ('utf-8')
+
+  65           LOAD_CONST               7 (('encoding',))
+               CALL_KW                  2
+               POP_TOP
+
+  64   L3:     LOAD_CONST               0 (None)
+               LOAD_CONST               0 (None)
+               LOAD_CONST               0 (None)
+               CALL                     2
+               POP_TOP
+               RETURN_CONST             0 (None)
+       L4:     PUSH_EXC_INFO
+               WITH_EXCEPT_START
+               TO_BOOL
+               POP_JUMP_IF_TRUE         1 (to L5)
+               RERAISE                  2
+       L5:     POP_TOP
+       L6:     POP_EXCEPT
+               POP_TOP
+               POP_TOP
+               RETURN_CONST             0 (None)
+
+  --   L7:     COPY                     3
+               POP_EXCEPT
+               RERAISE                  1
+ExceptionTable:
+  L2 to L3 -> L4 [1] lasti
+  L4 to L6 -> L7 [3] lasti
+
+Disassembly of <code object _truncate_value at 0x00000236B9D32EF0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 71>:
+ 71           RESUME                   0
+
+ 72           LOAD_GLOBAL              1 (isinstance + NULL)
+              LOAD_FAST                0 (val)
+              LOAD_GLOBAL              2 (str)
+              CALL                     2
+              TO_BOOL
+              POP_JUMP_IF_FALSE       45 (to L1)
+              LOAD_GLOBAL              5 (len + NULL)
+              LOAD_FAST                0 (val)
+              CALL                     1
+              LOAD_GLOBAL              6 (MAX_VALUE_LENGTH)
+              COMPARE_OP             148 (bool(>))
+              POP_JUMP_IF_FALSE       26 (to L1)
+
+ 73           LOAD_FAST                0 (val)
+              LOAD_CONST               0 (None)
+              LOAD_GLOBAL              6 (MAX_VALUE_LENGTH)
+              BINARY_SLICE
+              LOAD_ATTR                9 (rstrip + NULL|self)
+              CALL                     0
+              LOAD_CONST               1 ('…')
+              BINARY_OP                0 (+)
+              RETURN_VALUE
+
+ 74   L1:     LOAD_FAST                0 (val)
+              RETURN_VALUE
+
+Disassembly of <code object _recursive_update at 0x00000236BAF417B0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 77>:
+ 77            RESUME                   0
+
+ 78            LOAD_CONST               1 (False)
+               STORE_FAST               2 (changed)
+
+ 79            LOAD_FAST                1 (updates)
+               LOAD_ATTR                1 (items + NULL|self)
+               CALL                     0
+               GET_ITER
+       L1:     EXTENDED_ARG             1
+               FOR_ITER               320 (to L11)
+               UNPACK_SEQUENCE          2
+               STORE_FAST_STORE_FAST   52 (key, value)
+
+ 80            LOAD_FAST                4 (value)
+               POP_JUMP_IF_NOT_NONE     2 (to L2)
+
+ 81            JUMP_BACKWARD           11 (to L1)
+
+ 82    L2:     LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                4 (value)
+               LOAD_GLOBAL              4 (str)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       23 (to L3)
+               LOAD_FAST                4 (value)
+               LOAD_ATTR                7 (strip + NULL|self)
+               CALL                     0
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L3)
+
+ 83            JUMP_BACKWARD           55 (to L1)
+
+ 85    L3:     LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                4 (value)
+               LOAD_GLOBAL              8 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       65 (to L7)
+               LOAD_CONST               2 ('value')
+               LOAD_FAST                4 (value)
+               CONTAINS_OP              1
+               POP_JUMP_IF_FALSE       59 (to L7)
+
+ 86            LOAD_FAST_LOAD_FAST     48 (key, target)
+               CONTAINS_OP              1
+               POP_JUMP_IF_TRUE        23 (to L4)
+               LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST_LOAD_FAST      3 (target, key)
+               BINARY_SUBSCR
+               LOAD_GLOBAL              8 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_TRUE         6 (to L5)
+
+ 87    L4:     BUILD_MAP                0
+               LOAD_FAST_LOAD_FAST      3 (target, key)
+               STORE_SUBSCR
+
+ 88            LOAD_CONST               3 (True)
+               STORE_FAST               2 (changed)
+
+ 89    L5:     LOAD_GLOBAL             11 (_recursive_update + NULL)
+               LOAD_FAST_LOAD_FAST      3 (target, key)
+               BINARY_SUBSCR
+               LOAD_FAST                4 (value)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE        4 (to L6)
+
+ 90            LOAD_CONST               3 (True)
+               STORE_FAST               2 (changed)
+               JUMP_BACKWARD          139 (to L1)
+
+ 89    L6:     JUMP_BACKWARD          141 (to L1)
+
+ 92    L7:     LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                4 (value)
+               LOAD_GLOBAL              8 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       30 (to L8)
+               LOAD_CONST               2 ('value')
+               LOAD_FAST                4 (value)
+               CONTAINS_OP              0
+               POP_JUMP_IF_FALSE       24 (to L8)
+
+ 93            LOAD_GLOBAL             13 (_truncate_value + NULL)
+               LOAD_GLOBAL              5 (str + NULL)
+               LOAD_FAST                4 (value)
+               LOAD_CONST               2 ('value')
+               BINARY_SUBSCR
+               CALL                     1
+               CALL                     1
+               STORE_FAST               5 (new_val)
+               JUMP_FORWARD            20 (to L9)
+
+ 95    L8:     LOAD_GLOBAL             13 (_truncate_value + NULL)
+               LOAD_GLOBAL              5 (str + NULL)
+               LOAD_FAST                4 (value)
+               CALL                     1
+               CALL                     1
+               STORE_FAST               5 (new_val)
+
+ 97    L9:     LOAD_FAST                5 (new_val)
+               LOAD_GLOBAL             14 (datetime)
+               LOAD_ATTR               16 (now)
+               PUSH_NULL
+               CALL                     0
+               LOAD_ATTR               19 (strftime + NULL|self)
+               LOAD_CONST               4 ('%Y-%m-%d')
+               CALL                     1
+               LOAD_CONST               5 (('value', 'updated'))
+               BUILD_CONST_KEY_MAP      2
+               STORE_FAST               6 (entry)
+
+ 98            LOAD_FAST                0 (target)
+               LOAD_ATTR               21 (get + NULL|self)
+               LOAD_FAST                3 (key)
+               BUILD_MAP                0
+               CALL                     2
+               STORE_FAST               7 (existing)
+
+ 99            LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                7 (existing)
+               LOAD_GLOBAL              8 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       24 (to L10)
+               LOAD_FAST                7 (existing)
+               LOAD_ATTR               21 (get + NULL|self)
+               LOAD_CONST               2 ('value')
+               CALL                     1
+               LOAD_FAST                5 (new_val)
+               COMPARE_OP             119 (bool(!=))
+               POP_JUMP_IF_TRUE         3 (to L10)
+               EXTENDED_ARG             1
+               JUMP_BACKWARD          314 (to L1)
+
+100   L10:     LOAD_FAST_LOAD_FAST     96 (entry, target)
+               LOAD_FAST                3 (key)
+               STORE_SUBSCR
+
+101            LOAD_CONST               3 (True)
+               STORE_FAST               2 (changed)
+               EXTENDED_ARG             1
+               JUMP_BACKWARD          323 (to L1)
+
+ 79   L11:     END_FOR
+               POP_TOP
+
+103            LOAD_FAST                2 (changed)
+               RETURN_VALUE
+
+Disassembly of <code object update_memory at 0x00000236B9DA23A0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 106>:
+106           RESUME                   0
+
+107           LOAD_GLOBAL              1 (isinstance + NULL)
+              LOAD_FAST                0 (memory_update)
+              LOAD_GLOBAL              2 (dict)
+              CALL                     2
+              TO_BOOL
+              POP_JUMP_IF_FALSE        7 (to L1)
+              LOAD_FAST                0 (memory_update)
+              TO_BOOL
+              POP_JUMP_IF_TRUE        10 (to L2)
+
+108   L1:     LOAD_GLOBAL              5 (load_memory + NULL)
+              CALL                     0
+              RETURN_VALUE
+
+110   L2:     LOAD_GLOBAL              5 (load_memory + NULL)
+              CALL                     0
+              STORE_FAST               1 (memory)
+
+111           LOAD_GLOBAL              7 (_recursive_update + NULL)
+              LOAD_FAST_LOAD_FAST     16 (memory, memory_update)
+              CALL                     2
+              TO_BOOL
+              POP_JUMP_IF_FALSE       48 (to L3)
+
+112           LOAD_GLOBAL              9 (save_memory + NULL)
+              LOAD_FAST                1 (memory)
+              CALL                     1
+              POP_TOP
+
+113           LOAD_GLOBAL             11 (print + NULL)
+              LOAD_CONST               1 ('[Memory] 💾 Saved: ')
+              LOAD_GLOBAL             13 (list + NULL)
+              LOAD_FAST                0 (memory_update)
+              LOAD_ATTR               15 (keys + NULL|self)
+              CALL                     0
+              CALL                     1
+              FORMAT_SIMPLE
+              BUILD_STRING             2
+              CALL                     1
+              POP_TOP
+
+114   L3:     LOAD_FAST                1 (memory)
+              RETURN_VALUE
+
+Disassembly of <code object should_extract_memory at 0x00000236B9D7A970, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 117>:
+ 117           RESUME                   0
+
+ 122           NOP
+
+ 123   L1:     LOAD_CONST               1 (0)
+               LOAD_CONST               2 (None)
+               IMPORT_NAME              0 (google.generativeai)
+               IMPORT_FROM              1 (generativeai)
+               STORE_FAST               3 (genai)
+               POP_TOP
+
+ 124           LOAD_FAST                3 (genai)
+               LOAD_ATTR                5 (configure + NULL|self)
+               LOAD_FAST                2 (api_key)
+               LOAD_CONST               3 (('api_key',))
+               CALL_KW                  1
+               POP_TOP
+
+ 125           LOAD_FAST                3 (genai)
+               LOAD_ATTR                7 (GenerativeModel + NULL|self)
+               LOAD_CONST               4 ('gemini-2.5-flash-lite')
+               CALL                     1
+               STORE_FAST               4 (model)
+
+ 128           LOAD_CONST               5 ('User: ')
+               LOAD_FAST                0 (user_text)
+               LOAD_CONST               2 (None)
+               LOAD_CONST               6 (300)
+               BINARY_SLICE
+               FORMAT_SIMPLE
+               LOAD_CONST               7 ('\nJarvis: ')
+               LOAD_FAST                1 (jarvis_text)
+               LOAD_CONST               2 (None)
+               LOAD_CONST               8 (200)
+               BINARY_SLICE
+               FORMAT_SIMPLE
+               BUILD_STRING             4
+               STORE_FAST               5 (combined)
+
+ 130           LOAD_FAST                4 (model)
+               LOAD_ATTR                9 (generate_content + NULL|self)
+
+ 131           LOAD_CONST               9 ("Does this conversation contain ANY of the following?\n- Personal facts (name, age, city, job, birthday, nationality)\n- Preferences or favorites (food, color, music, sport, game, film, book, etc.)\n- Active projects or goals the user is working on\n- People in the user's life (friends, family, partner, colleagues)\n- Things the user wants to do or buy in the future\n- Any other fact worth remembering long-term\n\nReply only YES or NO.\n\nConversation:\n")
+
+ 138           LOAD_FAST                5 (combined)
+               FORMAT_SIMPLE
+
+ 131           BUILD_STRING             2
+
+ 130           CALL                     1
+               STORE_FAST               6 (check)
+
+ 140           LOAD_CONST              10 ('YES')
+               LOAD_FAST                6 (check)
+               LOAD_ATTR               10 (text)
+               LOAD_ATTR               13 (upper + NULL|self)
+               CALL                     0
+               CONTAINS_OP              0
+       L2:     RETURN_VALUE
+
+  --   L3:     PUSH_EXC_INFO
+
+ 141           LOAD_GLOBAL             14 (Exception)
+               CHECK_EXC_MATCH
+               POP_JUMP_IF_FALSE       24 (to L7)
+               STORE_FAST               7 (e)
+
+ 142   L4:     LOAD_GLOBAL             17 (print + NULL)
+               LOAD_CONST              11 ('[Memory] ⚠️ Stage1 check failed: ')
+               LOAD_FAST                7 (e)
+               FORMAT_SIMPLE
+               BUILD_STRING             2
+               CALL                     1
+               POP_TOP
+
+ 143   L5:     POP_EXCEPT
+               LOAD_CONST               2 (None)
+               STORE_FAST               7 (e)
+               DELETE_FAST              7 (e)
+               RETURN_CONST            12 (False)
+
+  --   L6:     LOAD_CONST               2 (None)
+               STORE_FAST               7 (e)
+               DELETE_FAST              7 (e)
+               RERAISE                  1
+
+ 141   L7:     RERAISE                  0
+
+  --   L8:     COPY                     3
+               POP_EXCEPT
+               RERAISE                  1
+ExceptionTable:
+  L1 to L2 -> L3 [0]
+  L3 to L4 -> L8 [1] lasti
+  L4 to L5 -> L6 [1] lasti
+  L6 to L8 -> L8 [1] lasti
+
+Disassembly of <code object extract_memory at 0x00000236BAF4D760, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 146>:
+ 146            RESUME                   0
+
+ 150            NOP
+
+ 151    L1:     LOAD_CONST               1 (0)
+                LOAD_CONST               2 (None)
+                IMPORT_NAME              0 (google.generativeai)
+                IMPORT_FROM              1 (generativeai)
+                STORE_FAST               3 (genai)
+                POP_TOP
+
+ 152            LOAD_FAST                3 (genai)
+                LOAD_ATTR                5 (configure + NULL|self)
+                LOAD_FAST                2 (api_key)
+                LOAD_CONST               3 (('api_key',))
+                CALL_KW                  1
+                POP_TOP
+
+ 153            LOAD_FAST                3 (genai)
+                LOAD_ATTR                7 (GenerativeModel + NULL|self)
+                LOAD_CONST               4 ('gemini-2.5-flash-lite')
+                CALL                     1
+                STORE_FAST               4 (model)
+
+ 155            LOAD_CONST               5 ('User: ')
+                LOAD_FAST                0 (user_text)
+                LOAD_CONST               2 (None)
+                LOAD_CONST               6 (500)
+                BINARY_SLICE
+                FORMAT_SIMPLE
+                LOAD_CONST               7 ('\nJarvis: ')
+                LOAD_FAST                1 (jarvis_text)
+                LOAD_CONST               2 (None)
+                LOAD_CONST               8 (300)
+                BINARY_SLICE
+                FORMAT_SIMPLE
+                BUILD_STRING             4
+                STORE_FAST               5 (combined)
+
+ 157            LOAD_FAST                4 (model)
+                LOAD_ATTR                9 (generate_content + NULL|self)
+
+ 158            LOAD_CONST               9 ('Extract ALL memorable personal facts from this conversation. Any language.\nReturn ONLY valid JSON. Use {} if truly nothing is worth saving.\n\nCategory guide:\n  identity      → name, age, birthday, city, country, job, school, nationality, language\n  preferences   → ANY favorite or preferred thing:\n                  favorite_food, favorite_color, favorite_music, favorite_film,\n                  favorite_game, favorite_sport, favorite_book, favorite_artist,\n                  favorite_country, hobbies, interests, dislikes, etc.\n  projects      → projects being built, ongoing work, goals, ideas in progress\n                  (e.g. mark_xxv: \'Building a JARVIS-like AI assistant\')\n  relationships → people mentioned: friends, family, partner, colleagues\n                  (e.g. best_friend_ali: \'Best friend, met in university\')\n  wishes        → future plans, things to buy, travel plans, dreams\n  notes         → anything else worth remembering (habits, schedule, etc.)\n\nIMPORTANT:\n- Be LIBERAL: if something MIGHT be worth remembering, include it.\n- Extract from BOTH user and Jarvis turns.\n- Skip: weather, reminders, search results, one-time commands.\n- Use concise English values regardless of conversation language.\n\nFormat:\n{"identity":{"name":{"value":"Ali"}},\n "preferences":{"favorite_color":{"value":"blue"}, "hobby":{"value":"gaming"}},\n "projects":{"mark_xxv":{"value":"JARVIS-like AI assistant on Windows"}},\n "relationships":{"friend_yusuf":{"value":"close friend"}},\n "wishes":{"buy_guitar":{"value":"wants an acoustic guitar"}},\n "notes":{"works_at_night":{"value":"usually active late at night"}}}\n\nConversation:\n')
+
+ 184            LOAD_FAST                5 (combined)
+                FORMAT_SIMPLE
+                LOAD_CONST              10 ('\n\nJSON:')
+
+ 158            BUILD_STRING             3
+
+ 157            CALL                     1
+
+ 185            LOAD_ATTR               10 (text)
+                LOAD_ATTR               13 (strip + NULL|self)
+                CALL                     0
+
+ 157            STORE_FAST               6 (raw)
+
+ 187            LOAD_CONST               1 (0)
+                LOAD_CONST               2 (None)
+                IMPORT_NAME              7 (re)
+                STORE_FAST               7 (re)
+
+ 188            LOAD_FAST                7 (re)
+                LOAD_ATTR               17 (sub + NULL|self)
+                LOAD_CONST              11 ('```(?:json)?')
+                LOAD_CONST              12 ('')
+                LOAD_FAST                6 (raw)
+                CALL                     3
+                LOAD_ATTR               13 (strip + NULL|self)
+                CALL                     0
+                LOAD_ATTR               19 (rstrip + NULL|self)
+                LOAD_CONST              13 ('`')
+                CALL                     1
+                LOAD_ATTR               13 (strip + NULL|self)
+                CALL                     0
+                STORE_FAST               6 (raw)
+
+ 189            LOAD_FAST                6 (raw)
+                TO_BOOL
+                POP_JUMP_IF_FALSE        6 (to L2)
+                LOAD_FAST                6 (raw)
+                LOAD_CONST              14 ('{}')
+                COMPARE_OP              88 (bool(==))
+                POP_JUMP_IF_FALSE        2 (to L4)
+
+ 190    L2:     BUILD_MAP                0
+        L3:     RETURN_VALUE
+
+ 192    L4:     LOAD_GLOBAL             20 (json)
+                LOAD_ATTR               22 (loads)
+                PUSH_NULL
+                LOAD_FAST                6 (raw)
+                CALL                     1
+        L5:     RETURN_VALUE
+
+  --    L6:     PUSH_EXC_INFO
+
+ 194            LOAD_GLOBAL             20 (json)
+                LOAD_ATTR               24 (JSONDecodeError)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE        5 (to L8)
+                POP_TOP
+
+ 195            BUILD_MAP                0
+                SWAP                     2
+        L7:     POP_EXCEPT
+                RETURN_VALUE
+
+ 196    L8:     LOAD_GLOBAL             26 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE       41 (to L14)
+                STORE_FAST               8 (e)
+
+ 197    L9:     LOAD_CONST              15 ('429')
+                LOAD_GLOBAL             29 (str + NULL)
+                LOAD_FAST                8 (e)
+                CALL                     1
+                CONTAINS_OP              1
+                POP_JUMP_IF_FALSE       14 (to L10)
+
+ 198            LOAD_GLOBAL             31 (print + NULL)
+                LOAD_CONST              16 ('[Memory] ⚠️ Extract failed: ')
+                LOAD_FAST                8 (e)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+
+ 199   L10:     BUILD_MAP                0
+       L11:     SWAP                     2
+       L12:     POP_EXCEPT
+                LOAD_CONST               2 (None)
+                STORE_FAST               8 (e)
+                DELETE_FAST              8 (e)
+                RETURN_VALUE
+
+  --   L13:     LOAD_CONST               2 (None)
+                STORE_FAST               8 (e)
+                DELETE_FAST              8 (e)
+                RERAISE                  1
+
+ 196   L14:     RERAISE                  0
+
+  --   L15:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+ExceptionTable:
+  L1 to L3 -> L6 [0]
+  L4 to L5 -> L6 [0]
+  L6 to L7 -> L15 [1] lasti
+  L8 to L9 -> L15 [1] lasti
+  L9 to L11 -> L13 [1] lasti
+  L11 to L12 -> L15 [1] lasti
+  L13 to L15 -> L15 [1] lasti
+
+Disassembly of <code object format_memory_for_prompt at 0x00000236BAF391B0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 202>:
+202            RESUME                   0
+
+203            LOAD_FAST                0 (memory)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         1 (to L1)
+
+204            RETURN_CONST             1 ('')
+
+206    L1:     BUILD_LIST               0
+               STORE_FAST               1 (lines)
+
+208            LOAD_FAST                0 (memory)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               2 ('identity')
+               BUILD_MAP                0
+               CALL                     2
+               STORE_FAST               2 (identity)
+
+209            BUILD_LIST               0
+               LOAD_CONST               3 (('name', 'age', 'birthday', 'city', 'job', 'language', 'school', 'nationality'))
+               LIST_EXTEND              1
+               STORE_FAST               3 (id_fields)
+
+210            LOAD_FAST                3 (id_fields)
+               GET_ITER
+       L2:     FOR_ITER               114 (to L7)
+               STORE_FAST               4 (field)
+
+211            LOAD_FAST                2 (identity)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_FAST                4 (field)
+               CALL                     1
+               STORE_FAST               5 (entry)
+
+212            LOAD_FAST                5 (entry)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L3)
+               JUMP_BACKWARD           29 (to L2)
+
+213    L3:     LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                5 (entry)
+               LOAD_GLOBAL              4 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       17 (to L4)
+               LOAD_FAST                5 (entry)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               4 ('value')
+               CALL                     1
+               JUMP_FORWARD             1 (to L5)
+       L4:     LOAD_FAST                5 (entry)
+       L5:     STORE_FAST               6 (val)
+
+214            LOAD_FAST                6 (val)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L6)
+               JUMP_BACKWARD           78 (to L2)
+
+215    L6:     LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_FAST                4 (field)
+               LOAD_ATTR                9 (title + NULL|self)
+               CALL                     0
+               FORMAT_SIMPLE
+               LOAD_CONST               5 (': ')
+               LOAD_FAST                6 (val)
+               FORMAT_SIMPLE
+               BUILD_STRING             3
+               CALL                     1
+               POP_TOP
+               JUMP_BACKWARD          116 (to L2)
+
+210    L7:     END_FOR
+               POP_TOP
+
+216            LOAD_FAST                2 (identity)
+               LOAD_ATTR               11 (items + NULL|self)
+               CALL                     0
+               GET_ITER
+       L8:     FOR_ITER               113 (to L13)
+               UNPACK_SEQUENCE          2
+               STORE_FAST_STORE_FAST  117 (key, entry)
+
+217            LOAD_FAST_LOAD_FAST    115 (key, id_fields)
+               CONTAINS_OP              0
+               POP_JUMP_IF_FALSE        2 (to L9)
+
+218            JUMP_BACKWARD           12 (to L8)
+
+219    L9:     LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                5 (entry)
+               LOAD_GLOBAL              4 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       17 (to L10)
+               LOAD_FAST                5 (entry)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               4 ('value')
+               CALL                     1
+               JUMP_FORWARD             1 (to L11)
+      L10:     LOAD_FAST                5 (entry)
+      L11:     STORE_FAST               6 (val)
+
+220            LOAD_FAST                6 (val)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L12)
+               JUMP_BACKWARD           61 (to L8)
+
+221   L12:     LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_FAST                7 (key)
+               LOAD_ATTR               13 (replace + NULL|self)
+               LOAD_CONST               6 ('_')
+               LOAD_CONST               7 (' ')
+               CALL                     2
+               LOAD_ATTR                9 (title + NULL|self)
+               CALL                     0
+               FORMAT_SIMPLE
+               LOAD_CONST               5 (': ')
+               LOAD_FAST                6 (val)
+               FORMAT_SIMPLE
+               BUILD_STRING             3
+               CALL                     1
+               POP_TOP
+               JUMP_BACKWARD          115 (to L8)
+
+216   L13:     END_FOR
+               POP_TOP
+
+223            LOAD_FAST                0 (memory)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               8 ('preferences')
+               BUILD_MAP                0
+               CALL                     2
+               STORE_FAST               8 (prefs)
+
+224            LOAD_FAST                8 (prefs)
+               TO_BOOL
+               POP_JUMP_IF_FALSE      173 (to L19)
+
+225            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST               1 ('')
+               CALL                     1
+               POP_TOP
+
+226            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST               9 ('Preferences:')
+               CALL                     1
+               POP_TOP
+
+227            LOAD_GLOBAL             15 (list + NULL)
+               LOAD_FAST                8 (prefs)
+               LOAD_ATTR               11 (items + NULL|self)
+               CALL                     0
+               CALL                     1
+               LOAD_CONST               0 (None)
+               LOAD_CONST              10 (15)
+               BINARY_SLICE
+               GET_ITER
+      L14:     FOR_ITER               107 (to L18)
+               UNPACK_SEQUENCE          2
+               STORE_FAST_STORE_FAST  117 (key, entry)
+
+228            LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                5 (entry)
+               LOAD_GLOBAL              4 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       17 (to L15)
+               LOAD_FAST                5 (entry)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               4 ('value')
+               CALL                     1
+               JUMP_FORWARD             1 (to L16)
+      L15:     LOAD_FAST                5 (entry)
+      L16:     STORE_FAST               6 (val)
+
+229            LOAD_FAST                6 (val)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L17)
+               JUMP_BACKWARD           54 (to L14)
+
+230   L17:     LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              11 ('  - ')
+               LOAD_FAST                7 (key)
+               LOAD_ATTR               13 (replace + NULL|self)
+               LOAD_CONST               6 ('_')
+               LOAD_CONST               7 (' ')
+               CALL                     2
+               LOAD_ATTR                9 (title + NULL|self)
+               CALL                     0
+               FORMAT_SIMPLE
+               LOAD_CONST               5 (': ')
+               LOAD_FAST                6 (val)
+               FORMAT_SIMPLE
+               BUILD_STRING             4
+               CALL                     1
+               POP_TOP
+               JUMP_BACKWARD          109 (to L14)
+
+227   L18:     END_FOR
+               POP_TOP
+
+232   L19:     LOAD_FAST                0 (memory)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST              12 ('projects')
+               BUILD_MAP                0
+               CALL                     2
+               STORE_FAST               9 (projects)
+
+233            LOAD_FAST                9 (projects)
+               TO_BOOL
+               POP_JUMP_IF_FALSE      173 (to L25)
+
+234            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST               1 ('')
+               CALL                     1
+               POP_TOP
+
+235            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              13 ('Active Projects / Goals:')
+               CALL                     1
+               POP_TOP
+
+236            LOAD_GLOBAL             15 (list + NULL)
+               LOAD_FAST                9 (projects)
+               LOAD_ATTR               11 (items + NULL|self)
+               CALL                     0
+               CALL                     1
+               LOAD_CONST               0 (None)
+               LOAD_CONST              14 (8)
+               BINARY_SLICE
+               GET_ITER
+      L20:     FOR_ITER               107 (to L24)
+               UNPACK_SEQUENCE          2
+               STORE_FAST_STORE_FAST  117 (key, entry)
+
+237            LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                5 (entry)
+               LOAD_GLOBAL              4 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       17 (to L21)
+               LOAD_FAST                5 (entry)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               4 ('value')
+               CALL                     1
+               JUMP_FORWARD             1 (to L22)
+      L21:     LOAD_FAST                5 (entry)
+      L22:     STORE_FAST               6 (val)
+
+238            LOAD_FAST                6 (val)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L23)
+               JUMP_BACKWARD           54 (to L20)
+
+239   L23:     LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              11 ('  - ')
+               LOAD_FAST                7 (key)
+               LOAD_ATTR               13 (replace + NULL|self)
+               LOAD_CONST               6 ('_')
+               LOAD_CONST               7 (' ')
+               CALL                     2
+               LOAD_ATTR                9 (title + NULL|self)
+               CALL                     0
+               FORMAT_SIMPLE
+               LOAD_CONST               5 (': ')
+               LOAD_FAST                6 (val)
+               FORMAT_SIMPLE
+               BUILD_STRING             4
+               CALL                     1
+               POP_TOP
+               JUMP_BACKWARD          109 (to L20)
+
+236   L24:     END_FOR
+               POP_TOP
+
+241   L25:     LOAD_FAST                0 (memory)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST              15 ('relationships')
+               BUILD_MAP                0
+               CALL                     2
+               STORE_FAST              10 (rels)
+
+242            LOAD_FAST               10 (rels)
+               TO_BOOL
+               POP_JUMP_IF_FALSE      173 (to L31)
+
+243            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST               1 ('')
+               CALL                     1
+               POP_TOP
+
+244            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              16 ('People in their life:')
+               CALL                     1
+               POP_TOP
+
+245            LOAD_GLOBAL             15 (list + NULL)
+               LOAD_FAST               10 (rels)
+               LOAD_ATTR               11 (items + NULL|self)
+               CALL                     0
+               CALL                     1
+               LOAD_CONST               0 (None)
+               LOAD_CONST              17 (10)
+               BINARY_SLICE
+               GET_ITER
+      L26:     FOR_ITER               107 (to L30)
+               UNPACK_SEQUENCE          2
+               STORE_FAST_STORE_FAST  117 (key, entry)
+
+246            LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                5 (entry)
+               LOAD_GLOBAL              4 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       17 (to L27)
+               LOAD_FAST                5 (entry)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               4 ('value')
+               CALL                     1
+               JUMP_FORWARD             1 (to L28)
+      L27:     LOAD_FAST                5 (entry)
+      L28:     STORE_FAST               6 (val)
+
+247            LOAD_FAST                6 (val)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L29)
+               JUMP_BACKWARD           54 (to L26)
+
+248   L29:     LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              11 ('  - ')
+               LOAD_FAST                7 (key)
+               LOAD_ATTR               13 (replace + NULL|self)
+               LOAD_CONST               6 ('_')
+               LOAD_CONST               7 (' ')
+               CALL                     2
+               LOAD_ATTR                9 (title + NULL|self)
+               CALL                     0
+               FORMAT_SIMPLE
+               LOAD_CONST               5 (': ')
+               LOAD_FAST                6 (val)
+               FORMAT_SIMPLE
+               BUILD_STRING             4
+               CALL                     1
+               POP_TOP
+               JUMP_BACKWARD          109 (to L26)
+
+245   L30:     END_FOR
+               POP_TOP
+
+250   L31:     LOAD_FAST                0 (memory)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST              18 ('wishes')
+               BUILD_MAP                0
+               CALL                     2
+               STORE_FAST              11 (wishes)
+
+251            LOAD_FAST               11 (wishes)
+               TO_BOOL
+               POP_JUMP_IF_FALSE      173 (to L37)
+
+252            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST               1 ('')
+               CALL                     1
+               POP_TOP
+
+253            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              19 ('Wishes / Plans / Wants:')
+               CALL                     1
+               POP_TOP
+
+254            LOAD_GLOBAL             15 (list + NULL)
+               LOAD_FAST               11 (wishes)
+               LOAD_ATTR               11 (items + NULL|self)
+               CALL                     0
+               CALL                     1
+               LOAD_CONST               0 (None)
+               LOAD_CONST              14 (8)
+               BINARY_SLICE
+               GET_ITER
+      L32:     FOR_ITER               107 (to L36)
+               UNPACK_SEQUENCE          2
+               STORE_FAST_STORE_FAST  117 (key, entry)
+
+255            LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                5 (entry)
+               LOAD_GLOBAL              4 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       17 (to L33)
+               LOAD_FAST                5 (entry)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               4 ('value')
+               CALL                     1
+               JUMP_FORWARD             1 (to L34)
+      L33:     LOAD_FAST                5 (entry)
+      L34:     STORE_FAST               6 (val)
+
+256            LOAD_FAST                6 (val)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L35)
+               JUMP_BACKWARD           54 (to L32)
+
+257   L35:     LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              11 ('  - ')
+               LOAD_FAST                7 (key)
+               LOAD_ATTR               13 (replace + NULL|self)
+               LOAD_CONST               6 ('_')
+               LOAD_CONST               7 (' ')
+               CALL                     2
+               LOAD_ATTR                9 (title + NULL|self)
+               CALL                     0
+               FORMAT_SIMPLE
+               LOAD_CONST               5 (': ')
+               LOAD_FAST                6 (val)
+               FORMAT_SIMPLE
+               BUILD_STRING             4
+               CALL                     1
+               POP_TOP
+               JUMP_BACKWARD          109 (to L32)
+
+254   L36:     END_FOR
+               POP_TOP
+
+259   L37:     LOAD_FAST                0 (memory)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST              20 ('notes')
+               BUILD_MAP                0
+               CALL                     2
+               STORE_FAST              12 (notes)
+
+260            LOAD_FAST               12 (notes)
+               TO_BOOL
+               POP_JUMP_IF_FALSE      143 (to L43)
+
+261            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST               1 ('')
+               CALL                     1
+               POP_TOP
+
+262            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              21 ('Other notes:')
+               CALL                     1
+               POP_TOP
+
+263            LOAD_GLOBAL             15 (list + NULL)
+               LOAD_FAST               12 (notes)
+               LOAD_ATTR               11 (items + NULL|self)
+               CALL                     0
+               CALL                     1
+               LOAD_CONST               0 (None)
+               LOAD_CONST              14 (8)
+               BINARY_SLICE
+               GET_ITER
+      L38:     FOR_ITER                77 (to L42)
+               UNPACK_SEQUENCE          2
+               STORE_FAST_STORE_FAST  117 (key, entry)
+
+264            LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                5 (entry)
+               LOAD_GLOBAL              4 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       17 (to L39)
+               LOAD_FAST                5 (entry)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               4 ('value')
+               CALL                     1
+               JUMP_FORWARD             1 (to L40)
+      L39:     LOAD_FAST                5 (entry)
+      L40:     STORE_FAST               6 (val)
+
+265            LOAD_FAST                6 (val)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L41)
+               JUMP_BACKWARD           54 (to L38)
+
+266   L41:     LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              11 ('  - ')
+               LOAD_FAST                7 (key)
+               FORMAT_SIMPLE
+               LOAD_CONST               5 (': ')
+               LOAD_FAST                6 (val)
+               FORMAT_SIMPLE
+               BUILD_STRING             4
+               CALL                     1
+               POP_TOP
+               JUMP_BACKWARD           79 (to L38)
+
+263   L42:     END_FOR
+               POP_TOP
+
+268   L43:     LOAD_FAST                1 (lines)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         1 (to L44)
+
+269            RETURN_CONST             1 ('')
+
+271   L44:     LOAD_CONST              22 ('[WHAT YOU KNOW ABOUT THIS PERSON — use naturally, never recite like a list]\n')
+               STORE_FAST              13 (header)
+
+272            LOAD_FAST               13 (header)
+               LOAD_CONST              23 ('\n')
+               LOAD_ATTR               17 (join + NULL|self)
+               LOAD_FAST                1 (lines)
+               CALL                     1
+               BINARY_OP                0 (+)
+               STORE_FAST              14 (result)
+
+273            LOAD_GLOBAL             19 (len + NULL)
+               LOAD_FAST               14 (result)
+               CALL                     1
+               LOAD_CONST              24 (2000)
+               COMPARE_OP             148 (bool(>))
+               POP_JUMP_IF_FALSE        8 (to L45)
+
+274            LOAD_FAST               14 (result)
+               LOAD_CONST               0 (None)
+               LOAD_CONST              25 (1997)
+               BINARY_SLICE
+               LOAD_CONST              26 ('…')
+               BINARY_OP                0 (+)
+               STORE_FAST              14 (result)
+
+276   L45:     LOAD_FAST               14 (result)
+               LOAD_CONST              23 ('\n')
+               BINARY_OP                0 (+)
+               RETURN_VALUE
+
+Disassembly of <code object remember at 0x00000236BC486E50, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 279>:
+279           RESUME                   0
+
+280           BUILD_SET                0
+              LOAD_CONST               1 (frozenset({'relationships', 'notes', 'wishes', 'preferences', 'projects', 'identity'}))
+              SET_UPDATE               1
+              STORE_FAST               3 (valid)
+
+281           LOAD_FAST_LOAD_FAST     35 (category, valid)
+              CONTAINS_OP              1
+              POP_JUMP_IF_FALSE        2 (to L1)
+
+282           LOAD_CONST               2 ('notes')
+              STORE_FAST               2 (category)
+
+283   L1:     LOAD_GLOBAL              1 (update_memory + NULL)
+              LOAD_FAST_LOAD_FAST     32 (category, key)
+              LOAD_CONST               3 ('value')
+              LOAD_FAST                1 (value)
+              BUILD_MAP                1
+              BUILD_MAP                1
+              BUILD_MAP                1
+              CALL                     1
+              POP_TOP
+
+284           LOAD_CONST               4 ('Remembered: ')
+              LOAD_FAST                2 (category)
+              FORMAT_SIMPLE
+              LOAD_CONST               5 ('/')
+              LOAD_FAST                0 (key)
+              FORMAT_SIMPLE
+              LOAD_CONST               6 (' = ')
+              LOAD_FAST                1 (value)
+              FORMAT_SIMPLE
+              BUILD_STRING             6
+              RETURN_VALUE
+
+Disassembly of <code object forget at 0x00000236B9D279F0, file "e:\Mark-XXXV-main\memory\memory_manager.py", line 287>:
+287           RESUME                   0
+
+288           LOAD_GLOBAL              1 (load_memory + NULL)
+              CALL                     0
+              STORE_FAST               2 (memory)
+
+289           LOAD_FAST                2 (memory)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_FAST                1 (category)
+              BUILD_MAP                0
+              CALL                     2
+              STORE_FAST               3 (cat)
+
+290           LOAD_FAST_LOAD_FAST      3 (key, cat)
+              CONTAINS_OP              0
+              POP_JUMP_IF_FALSE       25 (to L1)
+
+291           LOAD_FAST_LOAD_FAST     48 (cat, key)
+              DELETE_SUBSCR
+
+292           LOAD_FAST_LOAD_FAST     50 (cat, memory)
+              LOAD_FAST                1 (category)
+              STORE_SUBSCR
+
+293           LOAD_GLOBAL              5 (save_memory + NULL)
+              LOAD_FAST                2 (memory)
+              CALL                     1
+              POP_TOP
+
+294           LOAD_CONST               1 ('Forgotten: ')
+              LOAD_FAST                1 (category)
+              FORMAT_SIMPLE
+              LOAD_CONST               2 ('/')
+              LOAD_FAST                0 (key)
+              FORMAT_SIMPLE
+              BUILD_STRING             4
+              RETURN_VALUE
+
+295   L1:     LOAD_CONST               3 ('Not found: ')
+              LOAD_FAST                1 (category)
+              FORMAT_SIMPLE
+              LOAD_CONST               2 ('/')
+              LOAD_FAST                0 (key)
+              FORMAT_SIMPLE
+              BUILD_STRING             4
+              RETURN_VALUE
+
+    Name: get_base_dir
+    Constants: (None, 'frozen', False)
+    Names: ('getattr', 'sys', 'Path', 'executable', 'parent', '__file__', 'resolve')
+    Varnames: ()
+    --- Disassembly ---
+ 18           RESUME                   0
+
+ 19           LOAD_GLOBAL              1 (getattr + NULL)
+              LOAD_GLOBAL              2 (sys)
+              LOAD_CONST               1 ('frozen')
+              LOAD_CONST               2 (False)
+              CALL                     3
+              TO_BOOL
+              POP_JUMP_IF_FALSE       35 (to L1)
+
+ 20           LOAD_GLOBAL              5 (Path + NULL)
+              LOAD_GLOBAL              2 (sys)
+              LOAD_ATTR                6 (executable)
+              CALL                     1
+              LOAD_ATTR                8 (parent)
+              RETURN_VALUE
+
+ 21   L1:     LOAD_GLOBAL              5 (Path + NULL)
+              LOAD_GLOBAL             10 (__file__)
+              CALL                     1
+              LOAD_ATTR               13 (resolve + NULL|self)
+              CALL                     0
+              LOAD_ATTR                8 (parent)
+              LOAD_ATTR                8 (parent)
+              RETURN_VALUE
+
+    Name: _empty_memory
+    Constants: (None, ('identity', 'preferences', 'projects', 'relationships', 'wishes', 'notes'))
+    Names: ()
+    Varnames: ()
+    --- Disassembly ---
+ 30           RESUME                   0
+
+ 32           BUILD_MAP                0
+
+ 33           BUILD_MAP                0
+
+ 34           BUILD_MAP                0
+
+ 35           BUILD_MAP                0
+
+ 36           BUILD_MAP                0
+
+ 37           BUILD_MAP                0
+
+ 31           LOAD_CONST               1 (('identity', 'preferences', 'projects', 'relationships', 'wishes', 'notes'))
+              BUILD_CONST_KEY_MAP      6
+              RETURN_VALUE
+
+    Name: load_memory
+    Constants: (None, 'utf-8', ('encoding',), '[Memory] ⚠️ Load error: ')
+    Names: ('MEMORY_PATH', 'exists', '_empty_memory', '_lock', 'json', 'loads', 'read_text', 'isinstance', 'dict', 'Exception', 'print')
+    Varnames: ('data', 'base', 'key', 'e')
+    --- Disassembly ---
+  41            RESUME                   0
+
+  42            LOAD_GLOBAL              0 (MEMORY_PATH)
+                LOAD_ATTR                3 (exists + NULL|self)
+                CALL                     0
+                TO_BOOL
+                POP_JUMP_IF_TRUE        10 (to L1)
+
+  43            LOAD_GLOBAL              5 (_empty_memory + NULL)
+                CALL                     0
+                RETURN_VALUE
+
+  45    L1:     LOAD_GLOBAL              6 (_lock)
+                BEFORE_WITH
+        L2:     POP_TOP
+
+  46    L3:     NOP
+
+  47    L4:     LOAD_GLOBAL              8 (json)
+                LOAD_ATTR               10 (loads)
+                PUSH_NULL
+                LOAD_GLOBAL              0 (MEMORY_PATH)
+                LOAD_ATTR               13 (read_text + NULL|self)
+                LOAD_CONST               1 ('utf-8')
+                LOAD_CONST               2 (('encoding',))
+                CALL_KW                  1
+                CALL                     1
+                STORE_FAST               0 (data)
+
+  48            LOAD_GLOBAL             15 (isinstance + NULL)
+                LOAD_FAST                0 (data)
+                LOAD_GLOBAL             16 (dict)
+                CALL                     2
+                TO_BOOL
+                POP_JUMP_IF_FALSE       41 (to L10)
+
+  49            LOAD_GLOBAL              5 (_empty_memory + NULL)
+                CALL                     0
+                STORE_FAST               1 (base)
+
+  50            LOAD_FAST                1 (base)
+                GET_ITER
+        L5:     FOR_ITER                14 (to L8)
+                STORE_FAST               2 (key)
+
+  51            LOAD_FAST_LOAD_FAST     32 (key, data)
+                CONTAINS_OP              1
+        L6:     POP_JUMP_IF_TRUE         2 (to L7)
+                JUMP_BACKWARD           10 (to L5)
+
+  52    L7:     BUILD_MAP                0
+                LOAD_FAST_LOAD_FAST      2 (data, key)
+                STORE_SUBSCR
+                JUMP_BACKWARD           16 (to L5)
+
+  50    L8:     END_FOR
+                POP_TOP
+
+  53            LOAD_FAST                0 (data)
+
+  45    L9:     SWAP                     2
+                LOAD_CONST               0 (None)
+                LOAD_CONST               0 (None)
+                LOAD_CONST               0 (None)
+                CALL                     2
+                POP_TOP
+                RETURN_VALUE
+
+  54   L10:     LOAD_GLOBAL              5 (_empty_memory + NULL)
+                CALL                     0
+
+  45   L11:     SWAP                     2
+                LOAD_CONST               0 (None)
+                LOAD_CONST               0 (None)
+                LOAD_CONST               0 (None)
+                CALL                     2
+                POP_TOP
+                RETURN_VALUE
+
+  --   L12:     PUSH_EXC_INFO
+
+  55            LOAD_GLOBAL             18 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE       43 (to L18)
+                STORE_FAST               3 (e)
+
+  56   L13:     LOAD_GLOBAL             21 (print + NULL)
+                LOAD_CONST               3 ('[Memory] ⚠️ Load error: ')
+                LOAD_FAST                3 (e)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+
+  57            LOAD_GLOBAL              5 (_empty_memory + NULL)
+                CALL                     0
+       L14:     SWAP                     2
+       L15:     POP_EXCEPT
+                LOAD_CONST               0 (None)
+                STORE_FAST               3 (e)
+                DELETE_FAST              3 (e)
+
+  45   L16:     SWAP                     2
+                LOAD_CONST               0 (None)
+                LOAD_CONST               0 (None)
+                LOAD_CONST               0 (None)
+                CALL                     2
+                POP_TOP
+                RETURN_VALUE
+
+  --   L17:     LOAD_CONST               0 (None)
+                STORE_FAST               3 (e)
+                DELETE_FAST              3 (e)
+                RERAISE                  1
+
+  55   L18:     RERAISE                  0
+
+  --   L19:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+
+  45   L20:     PUSH_EXC_INFO
+                WITH_EXCEPT_START
+                TO_BOOL
+                POP_JUMP_IF_TRUE         1 (to L21)
+                RERAISE                  2
+       L21:     POP_TOP
+       L22:     POP_EXCEPT
+                POP_TOP
+                POP_TOP
+                RETURN_CONST             0 (None)
+
+  --   L23:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+ExceptionTable:
+  L2 to L3 -> L20 [1] lasti
+  L4 to L6 -> L12 [1]
+  L7 to L9 -> L12 [1]
+  L10 to L11 -> L12 [1]
+  L12 to L13 -> L19 [2] lasti
+  L13 to L14 -> L17 [2] lasti
+  L14 to L15 -> L19 [2] lasti
+  L15 to L16 -> L20 [1] lasti
+  L17 to L19 -> L19 [2] lasti
+  L19 to L20 -> L20 [1] lasti
+  L20 to L22 -> L23 [3] lasti
+
+    Name: save_memory
+    Constants: (None, True, ('parents', 'exist_ok'), 2, False, ('indent', 'ensure_ascii'), 'utf-8', ('encoding',))
+    Names: ('isinstance', 'dict', 'MEMORY_PATH', 'parent', 'mkdir', '_lock', 'write_text', 'json', 'dumps')
+    Varnames: ('memory',)
+    --- Disassembly ---
+  60           RESUME                   0
+
+  61           LOAD_GLOBAL              1 (isinstance + NULL)
+               LOAD_FAST                0 (memory)
+               LOAD_GLOBAL              2 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_TRUE         1 (to L1)
+
+  62           RETURN_CONST             0 (None)
+
+  63   L1:     LOAD_GLOBAL              4 (MEMORY_PATH)
+               LOAD_ATTR                6 (parent)
+               LOAD_ATTR                9 (mkdir + NULL|self)
+               LOAD_CONST               1 (True)
+               LOAD_CONST               1 (True)
+               LOAD_CONST               2 (('parents', 'exist_ok'))
+               CALL_KW                  2
+               POP_TOP
+
+  64           LOAD_GLOBAL             10 (_lock)
+               BEFORE_WITH
+       L2:     POP_TOP
+
+  65           LOAD_GLOBAL              4 (MEMORY_PATH)
+               LOAD_ATTR               13 (write_text + NULL|self)
+
+  66           LOAD_GLOBAL             14 (json)
+               LOAD_ATTR               16 (dumps)
+               PUSH_NULL
+               LOAD_FAST                0 (memory)
+               LOAD_CONST               3 (2)
+               LOAD_CONST               4 (False)
+               LOAD_CONST               5 (('indent', 'ensure_ascii'))
+               CALL_KW                  3
+
+  67           LOAD_CONST               6 ('utf-8')
+
+  65           LOAD_CONST               7 (('encoding',))
+               CALL_KW                  2
+               POP_TOP
+
+  64   L3:     LOAD_CONST               0 (None)
+               LOAD_CONST               0 (None)
+               LOAD_CONST               0 (None)
+               CALL                     2
+               POP_TOP
+               RETURN_CONST             0 (None)
+       L4:     PUSH_EXC_INFO
+               WITH_EXCEPT_START
+               TO_BOOL
+               POP_JUMP_IF_TRUE         1 (to L5)
+               RERAISE                  2
+       L5:     POP_TOP
+       L6:     POP_EXCEPT
+               POP_TOP
+               POP_TOP
+               RETURN_CONST             0 (None)
+
+  --   L7:     COPY                     3
+               POP_EXCEPT
+               RERAISE                  1
+ExceptionTable:
+  L2 to L3 -> L4 [1] lasti
+  L4 to L6 -> L7 [3] lasti
+
+    Name: _truncate_value
+    Constants: (None, '…')
+    Names: ('isinstance', 'str', 'len', 'MAX_VALUE_LENGTH', 'rstrip')
+    Varnames: ('val',)
+    --- Disassembly ---
+ 71           RESUME                   0
+
+ 72           LOAD_GLOBAL              1 (isinstance + NULL)
+              LOAD_FAST                0 (val)
+              LOAD_GLOBAL              2 (str)
+              CALL                     2
+              TO_BOOL
+              POP_JUMP_IF_FALSE       45 (to L1)
+              LOAD_GLOBAL              5 (len + NULL)
+              LOAD_FAST                0 (val)
+              CALL                     1
+              LOAD_GLOBAL              6 (MAX_VALUE_LENGTH)
+              COMPARE_OP             148 (bool(>))
+              POP_JUMP_IF_FALSE       26 (to L1)
+
+ 73           LOAD_FAST                0 (val)
+              LOAD_CONST               0 (None)
+              LOAD_GLOBAL              6 (MAX_VALUE_LENGTH)
+              BINARY_SLICE
+              LOAD_ATTR                9 (rstrip + NULL|self)
+              CALL                     0
+              LOAD_CONST               1 ('…')
+              BINARY_OP                0 (+)
+              RETURN_VALUE
+
+ 74   L1:     LOAD_FAST                0 (val)
+              RETURN_VALUE
+
+    Name: _recursive_update
+    Constants: (None, False, 'value', True, '%Y-%m-%d', ('value', 'updated'))
+    Names: ('items', 'isinstance', 'str', 'strip', 'dict', '_recursive_update', '_truncate_value', 'datetime', 'now', 'strftime', 'get')
+    Varnames: ('target', 'updates', 'changed', 'key', 'value', 'new_val', 'entry', 'existing')
+    --- Disassembly ---
+ 77            RESUME                   0
+
+ 78            LOAD_CONST               1 (False)
+               STORE_FAST               2 (changed)
+
+ 79            LOAD_FAST                1 (updates)
+               LOAD_ATTR                1 (items + NULL|self)
+               CALL                     0
+               GET_ITER
+       L1:     EXTENDED_ARG             1
+               FOR_ITER               320 (to L11)
+               UNPACK_SEQUENCE          2
+               STORE_FAST_STORE_FAST   52 (key, value)
+
+ 80            LOAD_FAST                4 (value)
+               POP_JUMP_IF_NOT_NONE     2 (to L2)
+
+ 81            JUMP_BACKWARD           11 (to L1)
+
+ 82    L2:     LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                4 (value)
+               LOAD_GLOBAL              4 (str)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       23 (to L3)
+               LOAD_FAST                4 (value)
+               LOAD_ATTR                7 (strip + NULL|self)
+               CALL                     0
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L3)
+
+ 83            JUMP_BACKWARD           55 (to L1)
+
+ 85    L3:     LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                4 (value)
+               LOAD_GLOBAL              8 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       65 (to L7)
+               LOAD_CONST               2 ('value')
+               LOAD_FAST                4 (value)
+               CONTAINS_OP              1
+               POP_JUMP_IF_FALSE       59 (to L7)
+
+ 86            LOAD_FAST_LOAD_FAST     48 (key, target)
+               CONTAINS_OP              1
+               POP_JUMP_IF_TRUE        23 (to L4)
+               LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST_LOAD_FAST      3 (target, key)
+               BINARY_SUBSCR
+               LOAD_GLOBAL              8 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_TRUE         6 (to L5)
+
+ 87    L4:     BUILD_MAP                0
+               LOAD_FAST_LOAD_FAST      3 (target, key)
+               STORE_SUBSCR
+
+ 88            LOAD_CONST               3 (True)
+               STORE_FAST               2 (changed)
+
+ 89    L5:     LOAD_GLOBAL             11 (_recursive_update + NULL)
+               LOAD_FAST_LOAD_FAST      3 (target, key)
+               BINARY_SUBSCR
+               LOAD_FAST                4 (value)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE        4 (to L6)
+
+ 90            LOAD_CONST               3 (True)
+               STORE_FAST               2 (changed)
+               JUMP_BACKWARD          139 (to L1)
+
+ 89    L6:     JUMP_BACKWARD          141 (to L1)
+
+ 92    L7:     LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                4 (value)
+               LOAD_GLOBAL              8 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       30 (to L8)
+               LOAD_CONST               2 ('value')
+               LOAD_FAST                4 (value)
+               CONTAINS_OP              0
+               POP_JUMP_IF_FALSE       24 (to L8)
+
+ 93            LOAD_GLOBAL             13 (_truncate_value + NULL)
+               LOAD_GLOBAL              5 (str + NULL)
+               LOAD_FAST                4 (value)
+               LOAD_CONST               2 ('value')
+               BINARY_SUBSCR
+               CALL                     1
+               CALL                     1
+               STORE_FAST               5 (new_val)
+               JUMP_FORWARD            20 (to L9)
+
+ 95    L8:     LOAD_GLOBAL             13 (_truncate_value + NULL)
+               LOAD_GLOBAL              5 (str + NULL)
+               LOAD_FAST                4 (value)
+               CALL                     1
+               CALL                     1
+               STORE_FAST               5 (new_val)
+
+ 97    L9:     LOAD_FAST                5 (new_val)
+               LOAD_GLOBAL             14 (datetime)
+               LOAD_ATTR               16 (now)
+               PUSH_NULL
+               CALL                     0
+               LOAD_ATTR               19 (strftime + NULL|self)
+               LOAD_CONST               4 ('%Y-%m-%d')
+               CALL                     1
+               LOAD_CONST               5 (('value', 'updated'))
+               BUILD_CONST_KEY_MAP      2
+               STORE_FAST               6 (entry)
+
+ 98            LOAD_FAST                0 (target)
+               LOAD_ATTR               21 (get + NULL|self)
+               LOAD_FAST                3 (key)
+               BUILD_MAP                0
+               CALL                     2
+               STORE_FAST               7 (existing)
+
+ 99            LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                7 (existing)
+               LOAD_GLOBAL              8 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       24 (to L10)
+               LOAD_FAST                7 (existing)
+               LOAD_ATTR               21 (get + NULL|self)
+               LOAD_CONST               2 ('value')
+               CALL                     1
+               LOAD_FAST                5 (new_val)
+               COMPARE_OP             119 (bool(!=))
+               POP_JUMP_IF_TRUE         3 (to L10)
+               EXTENDED_ARG             1
+               JUMP_BACKWARD          314 (to L1)
+
+100   L10:     LOAD_FAST_LOAD_FAST     96 (entry, target)
+               LOAD_FAST                3 (key)
+               STORE_SUBSCR
+
+101            LOAD_CONST               3 (True)
+               STORE_FAST               2 (changed)
+               EXTENDED_ARG             1
+               JUMP_BACKWARD          323 (to L1)
+
+ 79   L11:     END_FOR
+               POP_TOP
+
+103            LOAD_FAST                2 (changed)
+               RETURN_VALUE
+
+    Name: update_memory
+    Constants: (None, '[Memory] 💾 Saved: ')
+    Names: ('isinstance', 'dict', 'load_memory', '_recursive_update', 'save_memory', 'print', 'list', 'keys')
+    Varnames: ('memory_update', 'memory')
+    --- Disassembly ---
+106           RESUME                   0
+
+107           LOAD_GLOBAL              1 (isinstance + NULL)
+              LOAD_FAST                0 (memory_update)
+              LOAD_GLOBAL              2 (dict)
+              CALL                     2
+              TO_BOOL
+              POP_JUMP_IF_FALSE        7 (to L1)
+              LOAD_FAST                0 (memory_update)
+              TO_BOOL
+              POP_JUMP_IF_TRUE        10 (to L2)
+
+108   L1:     LOAD_GLOBAL              5 (load_memory + NULL)
+              CALL                     0
+              RETURN_VALUE
+
+110   L2:     LOAD_GLOBAL              5 (load_memory + NULL)
+              CALL                     0
+              STORE_FAST               1 (memory)
+
+111           LOAD_GLOBAL              7 (_recursive_update + NULL)
+              LOAD_FAST_LOAD_FAST     16 (memory, memory_update)
+              CALL                     2
+              TO_BOOL
+              POP_JUMP_IF_FALSE       48 (to L3)
+
+112           LOAD_GLOBAL              9 (save_memory + NULL)
+              LOAD_FAST                1 (memory)
+              CALL                     1
+              POP_TOP
+
+113           LOAD_GLOBAL             11 (print + NULL)
+              LOAD_CONST               1 ('[Memory] 💾 Saved: ')
+              LOAD_GLOBAL             13 (list + NULL)
+              LOAD_FAST                0 (memory_update)
+              LOAD_ATTR               15 (keys + NULL|self)
+              CALL                     0
+              CALL                     1
+              FORMAT_SIMPLE
+              BUILD_STRING             2
+              CALL                     1
+              POP_TOP
+
+114   L3:     LOAD_FAST                1 (memory)
+              RETURN_VALUE
+
+    Name: should_extract_memory
+    Constants: ('\nStage 1: Hızlı YES/NO kontrolü.\nÖncekinden daha geniş kriterler — favori şeyler, projeler, arkadaşlar da dahil.\n', 0, None, ('api_key',), 'gemini-2.5-flash-lite', 'User: ', 300, '\nJarvis: ', 200, "Does this conversation contain ANY of the following?\n- Personal facts (name, age, city, job, birthday, nationality)\n- Preferences or favorites (food, color, music, sport, game, film, book, etc.)\n- Active projects or goals the user is working on\n- People in the user's life (friends, family, partner, colleagues)\n- Things the user wants to do or buy in the future\n- Any other fact worth remembering long-term\n\nReply only YES or NO.\n\nConversation:\n", 'YES', '[Memory] ⚠️ Stage1 check failed: ', False)
+    Names: ('google.generativeai', 'generativeai', 'configure', 'GenerativeModel', 'generate_content', 'text', 'upper', 'Exception', 'print')
+    Varnames: ('user_text', 'jarvis_text', 'api_key', 'genai', 'model', 'combined', 'check', 'e')
+    --- Disassembly ---
+ 117           RESUME                   0
+
+ 122           NOP
+
+ 123   L1:     LOAD_CONST               1 (0)
+               LOAD_CONST               2 (None)
+               IMPORT_NAME              0 (google.generativeai)
+               IMPORT_FROM              1 (generativeai)
+               STORE_FAST               3 (genai)
+               POP_TOP
+
+ 124           LOAD_FAST                3 (genai)
+               LOAD_ATTR                5 (configure + NULL|self)
+               LOAD_FAST                2 (api_key)
+               LOAD_CONST               3 (('api_key',))
+               CALL_KW                  1
+               POP_TOP
+
+ 125           LOAD_FAST                3 (genai)
+               LOAD_ATTR                7 (GenerativeModel + NULL|self)
+               LOAD_CONST               4 ('gemini-2.5-flash-lite')
+               CALL                     1
+               STORE_FAST               4 (model)
+
+ 128           LOAD_CONST               5 ('User: ')
+               LOAD_FAST                0 (user_text)
+               LOAD_CONST               2 (None)
+               LOAD_CONST               6 (300)
+               BINARY_SLICE
+               FORMAT_SIMPLE
+               LOAD_CONST               7 ('\nJarvis: ')
+               LOAD_FAST                1 (jarvis_text)
+               LOAD_CONST               2 (None)
+               LOAD_CONST               8 (200)
+               BINARY_SLICE
+               FORMAT_SIMPLE
+               BUILD_STRING             4
+               STORE_FAST               5 (combined)
+
+ 130           LOAD_FAST                4 (model)
+               LOAD_ATTR                9 (generate_content + NULL|self)
+
+ 131           LOAD_CONST               9 ("Does this conversation contain ANY of the following?\n- Personal facts (name, age, city, job, birthday, nationality)\n- Preferences or favorites (food, color, music, sport, game, film, book, etc.)\n- Active projects or goals the user is working on\n- People in the user's life (friends, family, partner, colleagues)\n- Things the user wants to do or buy in the future\n- Any other fact worth remembering long-term\n\nReply only YES or NO.\n\nConversation:\n")
+
+ 138           LOAD_FAST                5 (combined)
+               FORMAT_SIMPLE
+
+ 131           BUILD_STRING             2
+
+ 130           CALL                     1
+               STORE_FAST               6 (check)
+
+ 140           LOAD_CONST              10 ('YES')
+               LOAD_FAST                6 (check)
+               LOAD_ATTR               10 (text)
+               LOAD_ATTR               13 (upper + NULL|self)
+               CALL                     0
+               CONTAINS_OP              0
+       L2:     RETURN_VALUE
+
+  --   L3:     PUSH_EXC_INFO
+
+ 141           LOAD_GLOBAL             14 (Exception)
+               CHECK_EXC_MATCH
+               POP_JUMP_IF_FALSE       24 (to L7)
+               STORE_FAST               7 (e)
+
+ 142   L4:     LOAD_GLOBAL             17 (print + NULL)
+               LOAD_CONST              11 ('[Memory] ⚠️ Stage1 check failed: ')
+               LOAD_FAST                7 (e)
+               FORMAT_SIMPLE
+               BUILD_STRING             2
+               CALL                     1
+               POP_TOP
+
+ 143   L5:     POP_EXCEPT
+               LOAD_CONST               2 (None)
+               STORE_FAST               7 (e)
+               DELETE_FAST              7 (e)
+               RETURN_CONST            12 (False)
+
+  --   L6:     LOAD_CONST               2 (None)
+               STORE_FAST               7 (e)
+               DELETE_FAST              7 (e)
+               RERAISE                  1
+
+ 141   L7:     RERAISE                  0
+
+  --   L8:     COPY                     3
+               POP_EXCEPT
+               RERAISE                  1
+ExceptionTable:
+  L1 to L2 -> L3 [0]
+  L3 to L4 -> L8 [1] lasti
+  L4 to L5 -> L6 [1] lasti
+  L6 to L8 -> L8 [1] lasti
+
+    Name: extract_memory
+    Constants: ('\nStage 2: Detaylı çıkarım. Her iki tarafı da analiz eder.\n', 0, None, ('api_key',), 'gemini-2.5-flash-lite', 'User: ', 500, '\nJarvis: ', 300, 'Extract ALL memorable personal facts from this conversation. Any language.\nReturn ONLY valid JSON. Use {} if truly nothing is worth saving.\n\nCategory guide:\n  identity      → name, age, birthday, city, country, job, school, nationality, language\n  preferences   → ANY favorite or preferred thing:\n                  favorite_food, favorite_color, favorite_music, favorite_film,\n                  favorite_game, favorite_sport, favorite_book, favorite_artist,\n                  favorite_country, hobbies, interests, dislikes, etc.\n  projects      → projects being built, ongoing work, goals, ideas in progress\n                  (e.g. mark_xxv: \'Building a JARVIS-like AI assistant\')\n  relationships → people mentioned: friends, family, partner, colleagues\n                  (e.g. best_friend_ali: \'Best friend, met in university\')\n  wishes        → future plans, things to buy, travel plans, dreams\n  notes         → anything else worth remembering (habits, schedule, etc.)\n\nIMPORTANT:\n- Be LIBERAL: if something MIGHT be worth remembering, include it.\n- Extract from BOTH user and Jarvis turns.\n- Skip: weather, reminders, search results, one-time commands.\n- Use concise English values regardless of conversation language.\n\nFormat:\n{"identity":{"name":{"value":"Ali"}},\n "preferences":{"favorite_color":{"value":"blue"}, "hobby":{"value":"gaming"}},\n "projects":{"mark_xxv":{"value":"JARVIS-like AI assistant on Windows"}},\n "relationships":{"friend_yusuf":{"value":"close friend"}},\n "wishes":{"buy_guitar":{"value":"wants an acoustic guitar"}},\n "notes":{"works_at_night":{"value":"usually active late at night"}}}\n\nConversation:\n', '\n\nJSON:', '```(?:json)?', '', '`', '{}', '429', '[Memory] ⚠️ Extract failed: ')
+    Names: ('google.generativeai', 'generativeai', 'configure', 'GenerativeModel', 'generate_content', 'text', 'strip', 're', 'sub', 'rstrip', 'json', 'loads', 'JSONDecodeError', 'Exception', 'str', 'print')
+    Varnames: ('user_text', 'jarvis_text', 'api_key', 'genai', 'model', 'combined', 'raw', 're', 'e')
+    --- Disassembly ---
+ 146            RESUME                   0
+
+ 150            NOP
+
+ 151    L1:     LOAD_CONST               1 (0)
+                LOAD_CONST               2 (None)
+                IMPORT_NAME              0 (google.generativeai)
+                IMPORT_FROM              1 (generativeai)
+                STORE_FAST               3 (genai)
+                POP_TOP
+
+ 152            LOAD_FAST                3 (genai)
+                LOAD_ATTR                5 (configure + NULL|self)
+                LOAD_FAST                2 (api_key)
+                LOAD_CONST               3 (('api_key',))
+                CALL_KW                  1
+                POP_TOP
+
+ 153            LOAD_FAST                3 (genai)
+                LOAD_ATTR                7 (GenerativeModel + NULL|self)
+                LOAD_CONST               4 ('gemini-2.5-flash-lite')
+                CALL                     1
+                STORE_FAST               4 (model)
+
+ 155            LOAD_CONST               5 ('User: ')
+                LOAD_FAST                0 (user_text)
+                LOAD_CONST               2 (None)
+                LOAD_CONST               6 (500)
+                BINARY_SLICE
+                FORMAT_SIMPLE
+                LOAD_CONST               7 ('\nJarvis: ')
+                LOAD_FAST                1 (jarvis_text)
+                LOAD_CONST               2 (None)
+                LOAD_CONST               8 (300)
+                BINARY_SLICE
+                FORMAT_SIMPLE
+                BUILD_STRING             4
+                STORE_FAST               5 (combined)
+
+ 157            LOAD_FAST                4 (model)
+                LOAD_ATTR                9 (generate_content + NULL|self)
+
+ 158            LOAD_CONST               9 ('Extract ALL memorable personal facts from this conversation. Any language.\nReturn ONLY valid JSON. Use {} if truly nothing is worth saving.\n\nCategory guide:\n  identity      → name, age, birthday, city, country, job, school, nationality, language\n  preferences   → ANY favorite or preferred thing:\n                  favorite_food, favorite_color, favorite_music, favorite_film,\n                  favorite_game, favorite_sport, favorite_book, favorite_artist,\n                  favorite_country, hobbies, interests, dislikes, etc.\n  projects      → projects being built, ongoing work, goals, ideas in progress\n                  (e.g. mark_xxv: \'Building a JARVIS-like AI assistant\')\n  relationships → people mentioned: friends, family, partner, colleagues\n                  (e.g. best_friend_ali: \'Best friend, met in university\')\n  wishes        → future plans, things to buy, travel plans, dreams\n  notes         → anything else worth remembering (habits, schedule, etc.)\n\nIMPORTANT:\n- Be LIBERAL: if something MIGHT be worth remembering, include it.\n- Extract from BOTH user and Jarvis turns.\n- Skip: weather, reminders, search results, one-time commands.\n- Use concise English values regardless of conversation language.\n\nFormat:\n{"identity":{"name":{"value":"Ali"}},\n "preferences":{"favorite_color":{"value":"blue"}, "hobby":{"value":"gaming"}},\n "projects":{"mark_xxv":{"value":"JARVIS-like AI assistant on Windows"}},\n "relationships":{"friend_yusuf":{"value":"close friend"}},\n "wishes":{"buy_guitar":{"value":"wants an acoustic guitar"}},\n "notes":{"works_at_night":{"value":"usually active late at night"}}}\n\nConversation:\n')
+
+ 184            LOAD_FAST                5 (combined)
+                FORMAT_SIMPLE
+                LOAD_CONST              10 ('\n\nJSON:')
+
+ 158            BUILD_STRING             3
+
+ 157            CALL                     1
+
+ 185            LOAD_ATTR               10 (text)
+                LOAD_ATTR               13 (strip + NULL|self)
+                CALL                     0
+
+ 157            STORE_FAST               6 (raw)
+
+ 187            LOAD_CONST               1 (0)
+                LOAD_CONST               2 (None)
+                IMPORT_NAME              7 (re)
+                STORE_FAST               7 (re)
+
+ 188            LOAD_FAST                7 (re)
+                LOAD_ATTR               17 (sub + NULL|self)
+                LOAD_CONST              11 ('```(?:json)?')
+                LOAD_CONST              12 ('')
+                LOAD_FAST                6 (raw)
+                CALL                     3
+                LOAD_ATTR               13 (strip + NULL|self)
+                CALL                     0
+                LOAD_ATTR               19 (rstrip + NULL|self)
+                LOAD_CONST              13 ('`')
+                CALL                     1
+                LOAD_ATTR               13 (strip + NULL|self)
+                CALL                     0
+                STORE_FAST               6 (raw)
+
+ 189            LOAD_FAST                6 (raw)
+                TO_BOOL
+                POP_JUMP_IF_FALSE        6 (to L2)
+                LOAD_FAST                6 (raw)
+                LOAD_CONST              14 ('{}')
+                COMPARE_OP              88 (bool(==))
+                POP_JUMP_IF_FALSE        2 (to L4)
+
+ 190    L2:     BUILD_MAP                0
+        L3:     RETURN_VALUE
+
+ 192    L4:     LOAD_GLOBAL             20 (json)
+                LOAD_ATTR               22 (loads)
+                PUSH_NULL
+                LOAD_FAST                6 (raw)
+                CALL                     1
+        L5:     RETURN_VALUE
+
+  --    L6:     PUSH_EXC_INFO
+
+ 194            LOAD_GLOBAL             20 (json)
+                LOAD_ATTR               24 (JSONDecodeError)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE        5 (to L8)
+                POP_TOP
+
+ 195            BUILD_MAP                0
+                SWAP                     2
+        L7:     POP_EXCEPT
+                RETURN_VALUE
+
+ 196    L8:     LOAD_GLOBAL             26 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE       41 (to L14)
+                STORE_FAST               8 (e)
+
+ 197    L9:     LOAD_CONST              15 ('429')
+                LOAD_GLOBAL             29 (str + NULL)
+                LOAD_FAST                8 (e)
+                CALL                     1
+                CONTAINS_OP              1
+                POP_JUMP_IF_FALSE       14 (to L10)
+
+ 198            LOAD_GLOBAL             31 (print + NULL)
+                LOAD_CONST              16 ('[Memory] ⚠️ Extract failed: ')
+                LOAD_FAST                8 (e)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+
+ 199   L10:     BUILD_MAP                0
+       L11:     SWAP                     2
+       L12:     POP_EXCEPT
+                LOAD_CONST               2 (None)
+                STORE_FAST               8 (e)
+                DELETE_FAST              8 (e)
+                RETURN_VALUE
+
+  --   L13:     LOAD_CONST               2 (None)
+                STORE_FAST               8 (e)
+                DELETE_FAST              8 (e)
+                RERAISE                  1
+
+ 196   L14:     RERAISE                  0
+
+  --   L15:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+ExceptionTable:
+  L1 to L3 -> L6 [0]
+  L4 to L5 -> L6 [0]
+  L6 to L7 -> L15 [1] lasti
+  L8 to L9 -> L15 [1] lasti
+  L9 to L11 -> L13 [1] lasti
+  L11 to L12 -> L15 [1] lasti
+  L13 to L15 -> L15 [1] lasti
+
+    Name: format_memory_for_prompt
+    Constants: (None, '', 'identity', ('name', 'age', 'birthday', 'city', 'job', 'language', 'school', 'nationality'), 'value', ': ', '_', ' ', 'preferences', 'Preferences:', 15, '  - ', 'projects', 'Active Projects / Goals:', 8, 'relationships', 'People in their life:', 10, 'wishes', 'Wishes / Plans / Wants:', 'notes', 'Other notes:', '[WHAT YOU KNOW ABOUT THIS PERSON — use naturally, never recite like a list]\n', '\n', 2000, 1997, '…')
+    Names: ('get', 'isinstance', 'dict', 'append', 'title', 'items', 'replace', 'list', 'join', 'len')
+    Varnames: ('memory', 'lines', 'identity', 'id_fields', 'field', 'entry', 'val', 'key', 'prefs', 'projects', 'rels', 'wishes', 'notes', 'header', 'result')
+    --- Disassembly ---
+202            RESUME                   0
+
+203            LOAD_FAST                0 (memory)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         1 (to L1)
+
+204            RETURN_CONST             1 ('')
+
+206    L1:     BUILD_LIST               0
+               STORE_FAST               1 (lines)
+
+208            LOAD_FAST                0 (memory)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               2 ('identity')
+               BUILD_MAP                0
+               CALL                     2
+               STORE_FAST               2 (identity)
+
+209            BUILD_LIST               0
+               LOAD_CONST               3 (('name', 'age', 'birthday', 'city', 'job', 'language', 'school', 'nationality'))
+               LIST_EXTEND              1
+               STORE_FAST               3 (id_fields)
+
+210            LOAD_FAST                3 (id_fields)
+               GET_ITER
+       L2:     FOR_ITER               114 (to L7)
+               STORE_FAST               4 (field)
+
+211            LOAD_FAST                2 (identity)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_FAST                4 (field)
+               CALL                     1
+               STORE_FAST               5 (entry)
+
+212            LOAD_FAST                5 (entry)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L3)
+               JUMP_BACKWARD           29 (to L2)
+
+213    L3:     LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                5 (entry)
+               LOAD_GLOBAL              4 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       17 (to L4)
+               LOAD_FAST                5 (entry)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               4 ('value')
+               CALL                     1
+               JUMP_FORWARD             1 (to L5)
+       L4:     LOAD_FAST                5 (entry)
+       L5:     STORE_FAST               6 (val)
+
+214            LOAD_FAST                6 (val)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L6)
+               JUMP_BACKWARD           78 (to L2)
+
+215    L6:     LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_FAST                4 (field)
+               LOAD_ATTR                9 (title + NULL|self)
+               CALL                     0
+               FORMAT_SIMPLE
+               LOAD_CONST               5 (': ')
+               LOAD_FAST                6 (val)
+               FORMAT_SIMPLE
+               BUILD_STRING             3
+               CALL                     1
+               POP_TOP
+               JUMP_BACKWARD          116 (to L2)
+
+210    L7:     END_FOR
+               POP_TOP
+
+216            LOAD_FAST                2 (identity)
+               LOAD_ATTR               11 (items + NULL|self)
+               CALL                     0
+               GET_ITER
+       L8:     FOR_ITER               113 (to L13)
+               UNPACK_SEQUENCE          2
+               STORE_FAST_STORE_FAST  117 (key, entry)
+
+217            LOAD_FAST_LOAD_FAST    115 (key, id_fields)
+               CONTAINS_OP              0
+               POP_JUMP_IF_FALSE        2 (to L9)
+
+218            JUMP_BACKWARD           12 (to L8)
+
+219    L9:     LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                5 (entry)
+               LOAD_GLOBAL              4 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       17 (to L10)
+               LOAD_FAST                5 (entry)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               4 ('value')
+               CALL                     1
+               JUMP_FORWARD             1 (to L11)
+      L10:     LOAD_FAST                5 (entry)
+      L11:     STORE_FAST               6 (val)
+
+220            LOAD_FAST                6 (val)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L12)
+               JUMP_BACKWARD           61 (to L8)
+
+221   L12:     LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_FAST                7 (key)
+               LOAD_ATTR               13 (replace + NULL|self)
+               LOAD_CONST               6 ('_')
+               LOAD_CONST               7 (' ')
+               CALL                     2
+               LOAD_ATTR                9 (title + NULL|self)
+               CALL                     0
+               FORMAT_SIMPLE
+               LOAD_CONST               5 (': ')
+               LOAD_FAST                6 (val)
+               FORMAT_SIMPLE
+               BUILD_STRING             3
+               CALL                     1
+               POP_TOP
+               JUMP_BACKWARD          115 (to L8)
+
+216   L13:     END_FOR
+               POP_TOP
+
+223            LOAD_FAST                0 (memory)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               8 ('preferences')
+               BUILD_MAP                0
+               CALL                     2
+               STORE_FAST               8 (prefs)
+
+224            LOAD_FAST                8 (prefs)
+               TO_BOOL
+               POP_JUMP_IF_FALSE      173 (to L19)
+
+225            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST               1 ('')
+               CALL                     1
+               POP_TOP
+
+226            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST               9 ('Preferences:')
+               CALL                     1
+               POP_TOP
+
+227            LOAD_GLOBAL             15 (list + NULL)
+               LOAD_FAST                8 (prefs)
+               LOAD_ATTR               11 (items + NULL|self)
+               CALL                     0
+               CALL                     1
+               LOAD_CONST               0 (None)
+               LOAD_CONST              10 (15)
+               BINARY_SLICE
+               GET_ITER
+      L14:     FOR_ITER               107 (to L18)
+               UNPACK_SEQUENCE          2
+               STORE_FAST_STORE_FAST  117 (key, entry)
+
+228            LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                5 (entry)
+               LOAD_GLOBAL              4 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       17 (to L15)
+               LOAD_FAST                5 (entry)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               4 ('value')
+               CALL                     1
+               JUMP_FORWARD             1 (to L16)
+      L15:     LOAD_FAST                5 (entry)
+      L16:     STORE_FAST               6 (val)
+
+229            LOAD_FAST                6 (val)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L17)
+               JUMP_BACKWARD           54 (to L14)
+
+230   L17:     LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              11 ('  - ')
+               LOAD_FAST                7 (key)
+               LOAD_ATTR               13 (replace + NULL|self)
+               LOAD_CONST               6 ('_')
+               LOAD_CONST               7 (' ')
+               CALL                     2
+               LOAD_ATTR                9 (title + NULL|self)
+               CALL                     0
+               FORMAT_SIMPLE
+               LOAD_CONST               5 (': ')
+               LOAD_FAST                6 (val)
+               FORMAT_SIMPLE
+               BUILD_STRING             4
+               CALL                     1
+               POP_TOP
+               JUMP_BACKWARD          109 (to L14)
+
+227   L18:     END_FOR
+               POP_TOP
+
+232   L19:     LOAD_FAST                0 (memory)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST              12 ('projects')
+               BUILD_MAP                0
+               CALL                     2
+               STORE_FAST               9 (projects)
+
+233            LOAD_FAST                9 (projects)
+               TO_BOOL
+               POP_JUMP_IF_FALSE      173 (to L25)
+
+234            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST               1 ('')
+               CALL                     1
+               POP_TOP
+
+235            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              13 ('Active Projects / Goals:')
+               CALL                     1
+               POP_TOP
+
+236            LOAD_GLOBAL             15 (list + NULL)
+               LOAD_FAST                9 (projects)
+               LOAD_ATTR               11 (items + NULL|self)
+               CALL                     0
+               CALL                     1
+               LOAD_CONST               0 (None)
+               LOAD_CONST              14 (8)
+               BINARY_SLICE
+               GET_ITER
+      L20:     FOR_ITER               107 (to L24)
+               UNPACK_SEQUENCE          2
+               STORE_FAST_STORE_FAST  117 (key, entry)
+
+237            LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                5 (entry)
+               LOAD_GLOBAL              4 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       17 (to L21)
+               LOAD_FAST                5 (entry)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               4 ('value')
+               CALL                     1
+               JUMP_FORWARD             1 (to L22)
+      L21:     LOAD_FAST                5 (entry)
+      L22:     STORE_FAST               6 (val)
+
+238            LOAD_FAST                6 (val)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L23)
+               JUMP_BACKWARD           54 (to L20)
+
+239   L23:     LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              11 ('  - ')
+               LOAD_FAST                7 (key)
+               LOAD_ATTR               13 (replace + NULL|self)
+               LOAD_CONST               6 ('_')
+               LOAD_CONST               7 (' ')
+               CALL                     2
+               LOAD_ATTR                9 (title + NULL|self)
+               CALL                     0
+               FORMAT_SIMPLE
+               LOAD_CONST               5 (': ')
+               LOAD_FAST                6 (val)
+               FORMAT_SIMPLE
+               BUILD_STRING             4
+               CALL                     1
+               POP_TOP
+               JUMP_BACKWARD          109 (to L20)
+
+236   L24:     END_FOR
+               POP_TOP
+
+241   L25:     LOAD_FAST                0 (memory)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST              15 ('relationships')
+               BUILD_MAP                0
+               CALL                     2
+               STORE_FAST              10 (rels)
+
+242            LOAD_FAST               10 (rels)
+               TO_BOOL
+               POP_JUMP_IF_FALSE      173 (to L31)
+
+243            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST               1 ('')
+               CALL                     1
+               POP_TOP
+
+244            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              16 ('People in their life:')
+               CALL                     1
+               POP_TOP
+
+245            LOAD_GLOBAL             15 (list + NULL)
+               LOAD_FAST               10 (rels)
+               LOAD_ATTR               11 (items + NULL|self)
+               CALL                     0
+               CALL                     1
+               LOAD_CONST               0 (None)
+               LOAD_CONST              17 (10)
+               BINARY_SLICE
+               GET_ITER
+      L26:     FOR_ITER               107 (to L30)
+               UNPACK_SEQUENCE          2
+               STORE_FAST_STORE_FAST  117 (key, entry)
+
+246            LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                5 (entry)
+               LOAD_GLOBAL              4 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       17 (to L27)
+               LOAD_FAST                5 (entry)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               4 ('value')
+               CALL                     1
+               JUMP_FORWARD             1 (to L28)
+      L27:     LOAD_FAST                5 (entry)
+      L28:     STORE_FAST               6 (val)
+
+247            LOAD_FAST                6 (val)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L29)
+               JUMP_BACKWARD           54 (to L26)
+
+248   L29:     LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              11 ('  - ')
+               LOAD_FAST                7 (key)
+               LOAD_ATTR               13 (replace + NULL|self)
+               LOAD_CONST               6 ('_')
+               LOAD_CONST               7 (' ')
+               CALL                     2
+               LOAD_ATTR                9 (title + NULL|self)
+               CALL                     0
+               FORMAT_SIMPLE
+               LOAD_CONST               5 (': ')
+               LOAD_FAST                6 (val)
+               FORMAT_SIMPLE
+               BUILD_STRING             4
+               CALL                     1
+               POP_TOP
+               JUMP_BACKWARD          109 (to L26)
+
+245   L30:     END_FOR
+               POP_TOP
+
+250   L31:     LOAD_FAST                0 (memory)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST              18 ('wishes')
+               BUILD_MAP                0
+               CALL                     2
+               STORE_FAST              11 (wishes)
+
+251            LOAD_FAST               11 (wishes)
+               TO_BOOL
+               POP_JUMP_IF_FALSE      173 (to L37)
+
+252            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST               1 ('')
+               CALL                     1
+               POP_TOP
+
+253            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              19 ('Wishes / Plans / Wants:')
+               CALL                     1
+               POP_TOP
+
+254            LOAD_GLOBAL             15 (list + NULL)
+               LOAD_FAST               11 (wishes)
+               LOAD_ATTR               11 (items + NULL|self)
+               CALL                     0
+               CALL                     1
+               LOAD_CONST               0 (None)
+               LOAD_CONST              14 (8)
+               BINARY_SLICE
+               GET_ITER
+      L32:     FOR_ITER               107 (to L36)
+               UNPACK_SEQUENCE          2
+               STORE_FAST_STORE_FAST  117 (key, entry)
+
+255            LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                5 (entry)
+               LOAD_GLOBAL              4 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       17 (to L33)
+               LOAD_FAST                5 (entry)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               4 ('value')
+               CALL                     1
+               JUMP_FORWARD             1 (to L34)
+      L33:     LOAD_FAST                5 (entry)
+      L34:     STORE_FAST               6 (val)
+
+256            LOAD_FAST                6 (val)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L35)
+               JUMP_BACKWARD           54 (to L32)
+
+257   L35:     LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              11 ('  - ')
+               LOAD_FAST                7 (key)
+               LOAD_ATTR               13 (replace + NULL|self)
+               LOAD_CONST               6 ('_')
+               LOAD_CONST               7 (' ')
+               CALL                     2
+               LOAD_ATTR                9 (title + NULL|self)
+               CALL                     0
+               FORMAT_SIMPLE
+               LOAD_CONST               5 (': ')
+               LOAD_FAST                6 (val)
+               FORMAT_SIMPLE
+               BUILD_STRING             4
+               CALL                     1
+               POP_TOP
+               JUMP_BACKWARD          109 (to L32)
+
+254   L36:     END_FOR
+               POP_TOP
+
+259   L37:     LOAD_FAST                0 (memory)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST              20 ('notes')
+               BUILD_MAP                0
+               CALL                     2
+               STORE_FAST              12 (notes)
+
+260            LOAD_FAST               12 (notes)
+               TO_BOOL
+               POP_JUMP_IF_FALSE      143 (to L43)
+
+261            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST               1 ('')
+               CALL                     1
+               POP_TOP
+
+262            LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              21 ('Other notes:')
+               CALL                     1
+               POP_TOP
+
+263            LOAD_GLOBAL             15 (list + NULL)
+               LOAD_FAST               12 (notes)
+               LOAD_ATTR               11 (items + NULL|self)
+               CALL                     0
+               CALL                     1
+               LOAD_CONST               0 (None)
+               LOAD_CONST              14 (8)
+               BINARY_SLICE
+               GET_ITER
+      L38:     FOR_ITER                77 (to L42)
+               UNPACK_SEQUENCE          2
+               STORE_FAST_STORE_FAST  117 (key, entry)
+
+264            LOAD_GLOBAL              3 (isinstance + NULL)
+               LOAD_FAST                5 (entry)
+               LOAD_GLOBAL              4 (dict)
+               CALL                     2
+               TO_BOOL
+               POP_JUMP_IF_FALSE       17 (to L39)
+               LOAD_FAST                5 (entry)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               4 ('value')
+               CALL                     1
+               JUMP_FORWARD             1 (to L40)
+      L39:     LOAD_FAST                5 (entry)
+      L40:     STORE_FAST               6 (val)
+
+265            LOAD_FAST                6 (val)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L41)
+               JUMP_BACKWARD           54 (to L38)
+
+266   L41:     LOAD_FAST                1 (lines)
+               LOAD_ATTR                7 (append + NULL|self)
+               LOAD_CONST              11 ('  - ')
+               LOAD_FAST                7 (key)
+               FORMAT_SIMPLE
+               LOAD_CONST               5 (': ')
+               LOAD_FAST                6 (val)
+               FORMAT_SIMPLE
+               BUILD_STRING             4
+               CALL                     1
+               POP_TOP
+               JUMP_BACKWARD           79 (to L38)
+
+263   L42:     END_FOR
+               POP_TOP
+
+268   L43:     LOAD_FAST                1 (lines)
+               TO_BOOL
+               POP_JUMP_IF_TRUE         1 (to L44)
+
+269            RETURN_CONST             1 ('')
+
+271   L44:     LOAD_CONST              22 ('[WHAT YOU KNOW ABOUT THIS PERSON — use naturally, never recite like a list]\n')
+               STORE_FAST              13 (header)
+
+272            LOAD_FAST               13 (header)
+               LOAD_CONST              23 ('\n')
+               LOAD_ATTR               17 (join + NULL|self)
+               LOAD_FAST                1 (lines)
+               CALL                     1
+               BINARY_OP                0 (+)
+               STORE_FAST              14 (result)
+
+273            LOAD_GLOBAL             19 (len + NULL)
+               LOAD_FAST               14 (result)
+               CALL                     1
+               LOAD_CONST              24 (2000)
+               COMPARE_OP             148 (bool(>))
+               POP_JUMP_IF_FALSE        8 (to L45)
+
+274            LOAD_FAST               14 (result)
+               LOAD_CONST               0 (None)
+               LOAD_CONST              25 (1997)
+               BINARY_SLICE
+               LOAD_CONST              26 ('…')
+               BINARY_OP                0 (+)
+               STORE_FAST              14 (result)
+
+276   L45:     LOAD_FAST               14 (result)
+               LOAD_CONST              23 ('\n')
+               BINARY_OP                0 (+)
+               RETURN_VALUE
+
+    Name: remember
+    Constants: (None, frozenset({'relationships', 'notes', 'wishes', 'preferences', 'projects', 'identity'}), 'notes', 'value', 'Remembered: ', '/', ' = ')
+    Names: ('update_memory',)
+    Varnames: ('key', 'value', 'category', 'valid')
+    --- Disassembly ---
+279           RESUME                   0
+
+280           BUILD_SET                0
+              LOAD_CONST               1 (frozenset({'relationships', 'notes', 'wishes', 'preferences', 'projects', 'identity'}))
+              SET_UPDATE               1
+              STORE_FAST               3 (valid)
+
+281           LOAD_FAST_LOAD_FAST     35 (category, valid)
+              CONTAINS_OP              1
+              POP_JUMP_IF_FALSE        2 (to L1)
+
+282           LOAD_CONST               2 ('notes')
+              STORE_FAST               2 (category)
+
+283   L1:     LOAD_GLOBAL              1 (update_memory + NULL)
+              LOAD_FAST_LOAD_FAST     32 (category, key)
+              LOAD_CONST               3 ('value')
+              LOAD_FAST                1 (value)
+              BUILD_MAP                1
+              BUILD_MAP                1
+              BUILD_MAP                1
+              CALL                     1
+              POP_TOP
+
+284           LOAD_CONST               4 ('Remembered: ')
+              LOAD_FAST                2 (category)
+              FORMAT_SIMPLE
+              LOAD_CONST               5 ('/')
+              LOAD_FAST                0 (key)
+              FORMAT_SIMPLE
+              LOAD_CONST               6 (' = ')
+              LOAD_FAST                1 (value)
+              FORMAT_SIMPLE
+              BUILD_STRING             6
+              RETURN_VALUE
+
+    Name: forget
+    Constants: (None, 'Forgotten: ', '/', 'Not found: ')
+    Names: ('load_memory', 'get', 'save_memory')
+    Varnames: ('key', 'category', 'memory', 'cat')
+    --- Disassembly ---
+287           RESUME                   0
+
+288           LOAD_GLOBAL              1 (load_memory + NULL)
+              CALL                     0
+              STORE_FAST               2 (memory)
+
+289           LOAD_FAST                2 (memory)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_FAST                1 (category)
+              BUILD_MAP                0
+              CALL                     2
+              STORE_FAST               3 (cat)
+
+290           LOAD_FAST_LOAD_FAST      3 (key, cat)
+              CONTAINS_OP              0
+              POP_JUMP_IF_FALSE       25 (to L1)
+
+291           LOAD_FAST_LOAD_FAST     48 (cat, key)
+              DELETE_SUBSCR
+
+292           LOAD_FAST_LOAD_FAST     50 (cat, memory)
+              LOAD_FAST                1 (category)
+              STORE_SUBSCR
+
+293           LOAD_GLOBAL              5 (save_memory + NULL)
+              LOAD_FAST                2 (memory)
+              CALL                     1
+              POP_TOP
+
+294           LOAD_CONST               1 ('Forgotten: ')
+              LOAD_FAST                1 (category)
+              FORMAT_SIMPLE
+              LOAD_CONST               2 ('/')
+              LOAD_FAST                0 (key)
+              FORMAT_SIMPLE
+              BUILD_STRING             4
+              RETURN_VALUE
+
+295   L1:     LOAD_CONST               3 ('Not found: ')
+              LOAD_FAST                1 (category)
+              FORMAT_SIMPLE
+              LOAD_CONST               2 ('/')
+              LOAD_FAST                0 (key)
+              FORMAT_SIMPLE
+              BUILD_STRING             4
+              RETURN_VALUE
+
