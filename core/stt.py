@@ -4,7 +4,8 @@ from groq import Groq
 # Ensure you have GROQ_API_KEY in your environment variables
 client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
-async def transcribe_audio(audio_bytes: bytes, filename: str = "audio.wav") -> str:
+# CHANGED: "audio.wav" -> "audio.webm"
+async def transcribe_audio(audio_bytes: bytes, filename: str = "audio.webm") -> str:
     """
     Transcribes audio bytes using Groq's whisper-large-v3-turbo model.
     """
