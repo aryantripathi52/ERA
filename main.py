@@ -30,74 +30,77 @@ async def websocket_audio_endpoint(websocket: WebSocket):
     await websocket.accept()
     print("[WebSocket] Client connected.")
     
-    # Normally, the ambulance_id would be passed via JWT or headers, using a default for now.
-    ambulance_id = "AMB-101"
-
+    # Establish a default system prompt in case no report is sent
+    system_prompt = "You are E.R.A., a calm, professional AI emergency medical assistant. Keep responses concise and critical."
+    
     try:
         while True:
-            # 1. Receive PCM/WAV chunks or text from the ambulance dashboard
+            # Use receive() to catch BOTH text (JSON) and bytes (Audio)
             message = await websocket.receive()
             
-            user_text = ""
+            # 1. HANDLE INCOMING JSON (INVENTORY & TRIAGE REPORT)
             if "text" in message:
-                # Allows the Next.js UI to send simple text strings
-                user_text = message["text"]
-                print(f"[WebSocket] Received text: {user_text}")
+                try:
+                    data = json.loads(message["text"])
+                    if data.get("type") == "system_context":
+                        condition = data.get("condition", "Unknown")
+                        inventory_list = data.get("inventory", [])
+                        inventory_str = ", ".join(inventory_list) if inventory_list else "Standard Supplies"
+                        
+                        # Dynamically update the AI's brain with the live ambulance data
+                        system_prompt = f"You are E.R.A., an AI emergency medical assistant. The current patient condition is: {condition}. You only have the following inventory available in the ambulance: {inventory_str}. Provide treatment steps using ONLY these items. Keep it concise."
+                        print("✅ E.R.A. System Prompt Updated with Inventory & Triage!")
+                except Exception as e:
+                    print(f"JSON Parse Error: {e}")
+            
+            # 2. HANDLE INCOMING AUDIO (MICROPHONE)
             elif "bytes" in message:
                 audio_bytes = message["bytes"]
-                print(f"[WebSocket] Received {len(audio_bytes)} bytes of audio.")
+                print(f"🎤 Received {len(audio_bytes)} bytes of audio.")
+                
                 # Transcribe Audio (Groq API: <100ms)
                 user_text = await transcribe_audio(audio_bytes)
                 
-            if not user_text:
-                continue
+                if not user_text:
+                    continue
+                    
+                print(f"Paramedic: {user_text}")
                 
-            print(f"Paramedic: {user_text}")
-            
-            # 2. Setup Context & Inventory
-            if not gemini_client:
-                print("[Error] GEMINI_API_KEY not set.")
-                await websocket.send_text(json.dumps({"error": "LLM not configured"}))
-                continue
+                if not gemini_client:
+                    print("[Error] GEMINI_API_KEY not set.")
+                    await websocket.send_text(json.dumps({"error": "LLM not configured"}))
+                    continue
                 
-            system_prompt = load_prompt()
-            
-            # Fetch Dynamic AMBULANCE_INVENTORY from Supabase
-            inventory = get_ambulance_inventory(ambulance_id)
-            inventory_json = json.dumps(inventory, indent=2)
-            
-            full_prompt = (
-                f"{system_prompt}\n\n"
-                f"=== AMBULANCE_INVENTORY (Ambulance ID: {ambulance_id}) ===\n"
-                f"{inventory_json}\n\n"
-                f"Paramedic: {user_text}"
-            )
-            
-            # 3. Query LLM (Gemini 2.5 Flash / 1.5 Flash)
-            response = gemini_client.models.generate_content(
-                model='gemini-2.5-flash',
-                contents=full_prompt
-            )
-            era_text = response.text.strip()
-            print(f"E.R.A.: {era_text}")
-            
-            import base64
-            # 5. Text-to-Speech (Edge-TTS Microsoft Neural Voices)
-            audio_response = await generate_speech(era_text)
-            
-            # 6. Stream JSON payload back over WebSocket
-            audio_b64 = base64.b64encode(audio_response).decode('utf-8') if audio_response else ""
-            
-            payload = {
-                "type": "message",
-                "role": "assistant",
-                "text": era_text,
-                "audio": audio_b64
-            }
-            await websocket.send_text(json.dumps(payload))
+                full_prompt = (
+                    f"{system_prompt}\n\n"
+                    f"Paramedic: {user_text}"
+                )
+                
+                # Query LLM (Gemini 2.5 Flash / 1.5 Flash)
+                response = gemini_client.models.generate_content(
+                    model='gemini-2.5-flash',
+                    contents=full_prompt
+                )
+                era_text = response.text.strip()
+                print(f"E.R.A.: {era_text}")
+                
+                import base64
+                # Text-to-Speech (Edge-TTS Microsoft Neural Voices)
+                audio_response = await generate_speech(era_text)
+                
+                # Stream JSON payload back over WebSocket
+                audio_b64 = base64.b64encode(audio_response).decode('utf-8') if audio_response else ""
+                
+                payload = {
+                    "type": "message",
+                    "role": "assistant",
+                    "text": era_text,
+                    "audio": audio_b64
+                }
+                await websocket.send_text(json.dumps(payload))
                 
     except WebSocketDisconnect:
-        print("[WebSocket] Client disconnected.")
+        print("❌ E.R.A. Client disconnected.")
     except Exception as e:
         print(f"[WebSocket Error] {e}")
 
