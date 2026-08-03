@@ -58,7 +58,7 @@ async def websocket_audio_endpoint(websocket: WebSocket):
                 audio_bytes = message["bytes"]
                 print(f"🎤 Received {len(audio_bytes)} bytes of audio.")
                 
-                # Transcribe Audio (Groq API: <100ms)
+                # Transcribe Audio
                 user_text = await transcribe_audio(audio_bytes)
                 
                 if not user_text:
@@ -76,29 +76,26 @@ async def websocket_audio_endpoint(websocket: WebSocket):
                     f"Paramedic: {user_text}"
                 )
                 
-                # Query LLM (Gemini 2.5 Flash / 1.5 Flash)
-                response = gemini_client.models.generate_content(
-                    model='gemini-2.5-flash',
-                    contents=full_prompt
-                )
-                era_text = response.text.strip()
-                print(f"E.R.A.: {era_text}")
-                
-                import base64
-                # Text-to-Speech (Edge-TTS Microsoft Neural Voices)
-                audio_response = await generate_speech(era_text)
-                
-                # Stream JSON payload back over WebSocket
-                audio_b64 = base64.b64encode(audio_response).decode('utf-8') if audio_response else ""
-                
-                payload = {
-                    "type": "message",
-                    "role": "assistant",
-                    "text": era_text,
-                    "audio": audio_b64
-                }
-                await websocket.send_text(json.dumps(payload))
-                
+                try:
+                    # Query LLM (Gemini)
+                    response = gemini_client.models.generate_content(
+                        model='gemini-2.5-flash', # You can also use 'gemini-1.5-flash' if 2.5 throws an error
+                        contents=full_prompt
+                    )
+                    era_text = response.text.strip()
+                    print(f"E.R.A.: {era_text}")
+                    
+                    # Stream JSON payload back over WebSocket (NO BACKEND AUDIO NEEDED)
+                    payload = {
+                        "type": "message",
+                        "role": "assistant",
+                        "text": era_text
+                    }
+                    await websocket.send_text(json.dumps(payload))
+                    
+                except Exception as llm_error:
+                    print(f"❌ AI Generation Error: {llm_error}")
+                    
     except WebSocketDisconnect:
         print("❌ E.R.A. Client disconnected.")
     except Exception as e:
