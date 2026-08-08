@@ -37,8 +37,13 @@ async def websocket_audio_endpoint(websocket: WebSocket):
         while True:
             message = await websocket.receive()
             
-            # 1. HANDLE INCOMING JSON
-            if "text" in message:
+            # 0. EXPLICITLY HANDLE DISCONNECTS
+            if message.get("type") == "websocket.disconnect":
+                print("👋 Client cleanly disconnected.", flush=True)
+                break
+            
+            # 1. HANDLE INCOMING JSON (Use .get() to ignore None values)
+            if message.get("text"):
                 try:
                     data = json.loads(message["text"])
                     if data.get("type") == "system_context":
@@ -48,13 +53,12 @@ async def websocket_audio_endpoint(websocket: WebSocket):
                         
                         system_prompt = f"You are E.R.A., an AI emergency medical assistant. The current patient condition is: {condition}. You only have the following inventory available in the ambulance: {inventory_str}. Provide treatment steps using ONLY these items. Keep it concise."
                         
-                        # Added flush=True to force Render to show this instantly
                         print("✅ E.R.A. System Prompt Updated with Inventory & Triage!", flush=True)
                 except Exception as e:
                     print(f"JSON Parse Error: {e}", flush=True)
             
             # 2. HANDLE INCOMING AUDIO
-            elif "bytes" in message:
+            elif message.get("bytes"):
                 audio_bytes = message["bytes"]
                 print(f"🎤 Received {len(audio_bytes)} bytes of audio.", flush=True)
                 
@@ -92,11 +96,10 @@ async def websocket_audio_endpoint(websocket: WebSocket):
                     print("🚀 Successfully sent AI response to frontend!", flush=True)
                     
                 except Exception as process_error:
-                    # IF IT CRASHES, WE WILL NOW SEE EXACTLY WHY
                     print(f"🔥 FATAL ERROR during audio processing: {process_error}", flush=True)
                     
     except WebSocketDisconnect:
-        print("❌ E.R.A. Client disconnected.", flush=True)
+        print("❌ E.R.A. Client disconnected abruptly.", flush=True)
     except Exception as e:
         print(f"[WebSocket Error] {e}", flush=True)
 
