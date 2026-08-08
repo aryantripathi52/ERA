@@ -35,10 +35,9 @@ async def websocket_audio_endpoint(websocket: WebSocket):
     
     try:
         while True:
-            # Use receive() to catch BOTH text (JSON) and bytes (Audio)
             message = await websocket.receive()
             
-            # 1. HANDLE INCOMING JSON (INVENTORY & TRIAGE REPORT)
+            # 1. HANDLE INCOMING JSON
             if "text" in message:
                 try:
                     data = json.loads(message["text"])
@@ -47,59 +46,59 @@ async def websocket_audio_endpoint(websocket: WebSocket):
                         inventory_list = data.get("inventory", [])
                         inventory_str = ", ".join(inventory_list) if inventory_list else "Standard Supplies"
                         
-                        # Dynamically update the AI's brain with the live ambulance data
                         system_prompt = f"You are E.R.A., an AI emergency medical assistant. The current patient condition is: {condition}. You only have the following inventory available in the ambulance: {inventory_str}. Provide treatment steps using ONLY these items. Keep it concise."
-                        print("✅ E.R.A. System Prompt Updated with Inventory & Triage!")
+                        
+                        # Added flush=True to force Render to show this instantly
+                        print("✅ E.R.A. System Prompt Updated with Inventory & Triage!", flush=True)
                 except Exception as e:
-                    print(f"JSON Parse Error: {e}")
+                    print(f"JSON Parse Error: {e}", flush=True)
             
-            # 2. HANDLE INCOMING AUDIO (MICROPHONE)
+            # 2. HANDLE INCOMING AUDIO
             elif "bytes" in message:
                 audio_bytes = message["bytes"]
-                print(f"🎤 Received {len(audio_bytes)} bytes of audio.")
-                
-                # Transcribe Audio
-                user_text = await transcribe_audio(audio_bytes)
-                
-                if not user_text:
-                    continue
-                    
-                print(f"Paramedic: {user_text}")
-                
-                if not gemini_client:
-                    print("[Error] GEMINI_API_KEY not set.")
-                    await websocket.send_text(json.dumps({"error": "LLM not configured"}))
-                    continue
-                
-                full_prompt = (
-                    f"{system_prompt}\n\n"
-                    f"Paramedic: {user_text}"
-                )
+                print(f"🎤 Received {len(audio_bytes)} bytes of audio.", flush=True)
                 
                 try:
-                    # Query LLM (Gemini)
+                    # Transcribe Audio
+                    user_text = await transcribe_audio(audio_bytes)
+                    print(f"Paramedic: {user_text}", flush=True)
+                    
+                    if not user_text:
+                        print("⚠️ Transcription was empty.", flush=True)
+                        continue
+                        
+                    if not gemini_client:
+                        print("❌ [Error] GEMINI_API_KEY not set.", flush=True)
+                        continue
+                    
+                    full_prompt = f"{system_prompt}\n\nParamedic: {user_text}"
+                    
+                    # Query LLM
+                    print("🧠 Sending to Gemini...", flush=True)
                     response = gemini_client.models.generate_content(
-                        model='gemini-2.5-flash', # You can also use 'gemini-1.5-flash' if 2.5 throws an error
+                        model='gemini-2.5-flash',
                         contents=full_prompt
                     )
                     era_text = response.text.strip()
-                    print(f"E.R.A.: {era_text}")
+                    print(f"E.R.A.: {era_text}", flush=True)
                     
-                    # Stream JSON payload back over WebSocket (NO BACKEND AUDIO NEEDED)
+                    # Send back to frontend
                     payload = {
                         "type": "message",
                         "role": "assistant",
                         "text": era_text
                     }
                     await websocket.send_text(json.dumps(payload))
+                    print("🚀 Successfully sent AI response to frontend!", flush=True)
                     
-                except Exception as llm_error:
-                    print(f"❌ AI Generation Error: {llm_error}")
+                except Exception as process_error:
+                    # IF IT CRASHES, WE WILL NOW SEE EXACTLY WHY
+                    print(f"🔥 FATAL ERROR during audio processing: {process_error}", flush=True)
                     
     except WebSocketDisconnect:
-        print("❌ E.R.A. Client disconnected.")
+        print("❌ E.R.A. Client disconnected.", flush=True)
     except Exception as e:
-        print(f"[WebSocket Error] {e}")
+        print(f"[WebSocket Error] {e}", flush=True)
 
 @app.get("/")
 def health_check():
